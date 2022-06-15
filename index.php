@@ -1,5 +1,17 @@
 <?php 
 	include('functions.php');
+    if (!isLoggedIn()) {
+        $_SESSION['msg'] = "You must log in first";
+        header('location: login.php');
+    }
+    //...
+
+// log user out if logout button clicked
+if (isset($_GET['logout'])) {
+	session_destroy();
+	unset($_SESSION['user']);
+	header("location: login.php");
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,5 +53,17 @@
 			</div>
 		</div>
 	</div>
+
+<?php
+    function isLoggedIn()
+{
+	if (isset($_SESSION['user'])) {
+		return true;
+	}else{
+		return false;
+	}
+}
+?>
+
 </body>
 </html>
