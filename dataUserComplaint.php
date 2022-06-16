@@ -1,49 +1,156 @@
-<?php
-$fname=$_FILES["f2"]["name"];
-$uploaddir = 'uploads'.$fname;
+<?php 
+session_start();
 
-$target_file = $uploaddir . basename($_FILES["f2"]["name"]);
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-move_uploaded_file($_FILES['f2']['tmp_name'],$uploaddir);
+// connect to database
+$db = mysqli_connect('localhost', 'root', '', 'projectairasia');
 
+// variable declaration
+$username = "";
+$email    = "";
+$errors   = array(); 
 
-$Cfullname=$_POST['fullname'];
-$Cemail=$_POST['email'];
-$Ccomp=$_POST['comp'];
-$Cdate= date("F j, Y, g:i a"); 
+// call the register() function if register_btn is clicked
+if (isset($_POST['btn-success'])) {
+	usercomplaint();
+}
 
+// REGISTER USER
+function usercomplaint(){
+	// call these variables with the global keyword to make them available in function
+	global $db, $errors, $username, $email;
 
-$servername='localhost';
-$username='root';
-$password='';
-$dbname='projectairasia';
+	// receive all input values from the form. Call the e() function
+    // defined below to escape form values
+	$fullname    =  e($_POST['username']);
+	$email       =  e($_POST['email']);
+	$comCategory  =  e($_POST['comCategory']);
+	$comDescription  =  e($_POST['comDescription']);
 
-$conn=mysqli_connect($servername,$username,$password,$dbname);
-if($conn)
-{
-	
-	$query1="SELECT * FROM `userlogininfo`";
-	$result=mysqli_query($conn,$query1);
-	if($result)
-	{
-		
-		while($row=mysqli_fetch_assoc($result))
-		{
-			$user=$row['user'];
+	// form validation: ensure that the form is correctly filled
+	if (empty($username)) { 
+		array_push($errors, "Username is required"); 
+	}
+	if (empty($email)) { 
+		array_push($errors, "Email is required"); 
+	}
+	if (empty($password_1)) { 
+		array_push($errors, "Password is required"); 
+	}
+	if ($password_1 != $password_2) {
+		array_push($errors, "The two passwords do not match");
+	}
+
+	// register user if there are no errors in the form
+	if (count($errors) == 0) {
+		$password = md5($password_1);//encrypt the password before saving in the database
+
+		if (isset($_POST['user_type'])) {
+			$user_type = e($_POST['user_type']);
+			$query = "INSERT INTO users (username, email, user_type, password) 
+					  VALUES('$username', '$email', '$user_type', '$password')";
+			mysqli_query($db, $query);
+			$_SESSION['success']  = "New user successfully created!!";
+			header('location: home.php');
+		}else{
+			$query = "INSERT INTO users (username, email, user_type, password) 
+					  VALUES('$username', '$email', 'user', '$password')";
+			mysqli_query($db, $query);
+
+			// get id of the created user
+			$logged_in_user_id = mysqli_insert_id($db);
+
+			$_SESSION['user'] = getUserById($logged_in_user_id); // put logged in user in session
+			$_SESSION['success']  = "You are now logged in";
+			header('location: index.php');				
 		}
-	}	
-	
-	$pend='1';
-	$query2="INSERT INTO `complaints`(`user`, `category`, `subcategory`, `nature`, `comp`, `file`, `pending`, `date`) VALUES 
-	('$user','$cat','$subcat','$nature','$comp','$uploaddir','$pend','$date')";
-
-	$result=mysqli_query($conn,$query2);
-		
-	if($result)
-	{
-		
-		echo "<script>window.location.assign('afterlogin.php');</script>";
-		
 	}
 }
-?>
+
+// return user array from their id
+function getUserById($id){
+	global $db;
+	$query = "SELECT * FROM users WHERE id=" . $id;
+	$result = mysqli_query($db, $query);
+
+	$user = mysqli_fetch_assoc($result);
+	return $user;
+}
+
+// escape string
+function e($val){
+	global $db;
+	return mysqli_real_escape_string($db, trim($val));
+}
+
+function display_error() {
+	global $errors;
+
+	if (count($errors) > 0){
+		echo '<div class="error">';
+			foreach ($errors as $error){
+				echo $error .'<br>';
+			}
+		echo '</div>';
+	}
+}
+
+
+
+// call the login() function if register_btn is clicked
+if (isset($_POST['login_btn'])) {
+	login();
+}
+
+// LOGIN USER
+function login(){
+	global $db, $username, $errors;
+
+	// grap form values
+	$username = e($_POST['username']);
+	$password = e($_POST['password']);
+
+	// make sure form is filled properly
+	if (empty($username)) {
+		array_push($errors, "Username is required");
+	}
+	if (empty($password)) {
+		array_push($errors, "Password is required");
+	}
+
+	// attempt login if no errors on form
+	if (count($errors) == 0) {
+		$password = md5($password);
+
+		$query = "SELECT * FROM users WHERE username='$username' AND password='$password' LIMIT 1";
+		$results = mysqli_query($db, $query);
+
+		if (mysqli_num_rows($results) == 1) { // user found
+			// check if user is admin or user
+			$logged_in_user = mysqli_fetch_assoc($results);
+			if ($logged_in_user['user_type'] == 'admin') {
+
+				$_SESSION['user'] = $logged_in_user;
+				$_SESSION['success']  = "You are now logged in";
+				header('location: admin/home.php');		  
+			}else{
+				$_SESSION['user'] = $logged_in_user;
+				$_SESSION['success']  = "You are now logged in";
+
+				header('location: index.php');
+			}
+		}else {
+			array_push($errors, "Wrong username/password combination");
+		}
+	}
+}
+
+
+// ...
+function isAdmin()
+{
+	if (isset($_SESSION['user']) && $_SESSION['user']['user_type'] == 'admin' ) {
+		return true;
+	}else{
+		return false;
+	}
+}
