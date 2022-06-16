@@ -7,11 +7,10 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 move_uploaded_file($_FILES['f2']['tmp_name'],$uploaddir);
 
 
-$Cusername=$_POST['username'];
+$Cfullname=$_POST['fullname'];
 $Cemail=$_POST['email'];
-$nature=$_POST['nature'];
-$comp=$_POST['comp'];
-$date= date("F j, Y, g:i a"); 
+$Ccomp=$_POST['comp'];
+$Cdate= date("F j, Y, g:i a"); 
 
 
 $servername='localhost';
