@@ -556,7 +556,7 @@ if($conn)
 					<span id="span">Complaint:</span>
 					<textarea name="comp" class="form-control in1" placeholder="Feel free to write. Your complaint is secure." style="height:200px;"></textarea><br />
 					
-					<input type="submit"  class="btn btn-success " style="width:auto ;padding:10px;padding-left:50px;padding-right:50px;"  value="Send"><br />
+					<input type="submit"  class="btn" name="btn-success" style="width:auto ;padding:10px;padding-left:50px;padding-right:50px;"  value="Send"><br />
 				</form>
 			</div>
 			
