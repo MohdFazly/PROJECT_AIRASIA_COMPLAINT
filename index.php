@@ -12,6 +12,8 @@ if (isset($_GET['logout'])) {
 	unset($_SESSION['user']);
 	header("location: login.php");
 }
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,13 +25,26 @@ if (isset($_GET['logout'])) {
 
 	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+
+<style>
+	input{
+		margin:20px;
+	}
+</style>
+
 </head>
 <body>
 
 <nav class="navbar-nav navbar-expand-sm bg-dark">
 		<div class="nav-item item1" style="margin-left:5%">
-				<h2 onclick='window.open("index.html");' style="cursor:pointer">AirAsia Complaint System</h2>
+				<h2 onclick='window.open("index.php");' style="cursor:pointer">AirAsia Complaint System</h2>
 		</div>
+
+		</nav>
+		<div id="pic" style="float:left;background-size:cover;position :absolute;opacity:0.7">
+			<img src="AirAsiaLogo.jpg" width="100%" height="92%">
+		</div>
+		<div id="main" class="container" style="position:relative;">
 	
 	<div class="header">
 		<h2>Home Page</h2>
@@ -48,7 +63,7 @@ if (isset($_GET['logout'])) {
 		<?php endif ?>
 		<!-- logged in user information -->
 		<div class="profile_info">
-			<img src="images/user_profile.png"  >
+			<img src="loginlogo.jpg"  >
 
 			<div>
 				<?php  if (isset($_SESSION['user'])) : ?>
@@ -59,6 +74,11 @@ if (isset($_GET['logout'])) {
 						<br>
 						<a href="index.php?logout='1'" style="color: red;">Logout</a>
 					</small>
+
+					</div>
+				<div style="width:50%" >
+				<a class="btn btn-danger" style="float:right;padding-left:30px;padding-right:30px;margin:10px;" href="makecomplaint.php">MAKE COMPLAINT</a>
+				</div>
 
 				<?php endif ?>
 			</div>
@@ -75,10 +95,6 @@ if (isset($_GET['logout'])) {
 	}
 }
 ?>
-
-<div id="pic" style="float:left;background-size:cover;position :absolute;opacity:0.7">
-			<img src="back.jpg" width="100%" height="92%">
-		</div>
-
-</body>
-</html>
+		 
+ </body>		
+</html>		
