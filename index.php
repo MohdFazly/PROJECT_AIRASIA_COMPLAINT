@@ -16,10 +16,21 @@ if (isset($_GET['logout'])) {
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+
+<nav class="navbar-nav navbar-expand-sm bg-dark">
+		<div class="nav-item item1" style="margin-left:5%">
+				<h2 onclick='window.open("index.html");' style="cursor:pointer">AirAsia Complaint System</h2>
+		</div>
+	
 	<div class="header">
 		<h2>Home Page</h2>
 	</div>
@@ -46,7 +57,7 @@ if (isset($_GET['logout'])) {
 					<small>
 						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i> 
 						<br>
-						<a href="index.php?logout='1'" style="color: red;">logout</a>
+						<a href="index.php?logout='1'" style="color: red;">Logout</a>
 					</small>
 
 				<?php endif ?>
@@ -64,6 +75,10 @@ if (isset($_GET['logout'])) {
 	}
 }
 ?>
+
+<div id="pic" style="float:left;background-size:cover;position :absolute;opacity:0.7">
+			<img src="back.jpg" width="100%" height="92%">
+		</div>
 
 </body>
 </html>
