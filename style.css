@@ -87,3 +87,14 @@ form, .content {
 	display: block;
 	clear: both;
 }
+
+.nav-item{
+	padding:6px;
+}
+.itme1{
+	padding-left:8%;
+}
+.item1 h2{
+	color:white;
+	font-family:Arial Black;
+}
