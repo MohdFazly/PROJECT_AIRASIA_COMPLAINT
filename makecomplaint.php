@@ -455,7 +455,7 @@ if($conn)
 		
 	
 			<div class="nav-item items"  style="margin-left:50%;">
-			<a class="btn btn-danger" title="Click to Logout" href="userlogin1.html">LOGOUT</a>
+			<a class="btn btn-danger" title="Click to Logout" href="login.php">LOGOUT</a>
 		</div>
 		</nav>
 		<nav  class="navbar navbar1 bg-light" style="float:left;margin-top:0px;display:block;
@@ -542,21 +542,20 @@ if($conn)
 						<!----------------------------------------------------------------------------------------makecomp-->
 			<div class="" id="makecomplaint" style="width:100%;display:none;border-radius:15px;padding:15px;margin:10px;background-color:rgba(32, 76, 5, 0.1);border:1px solid aqua;">
 				<h4>>Make a complaint<hr /></h4>
-				<form class="form" action="usermakecomp.php" method="POST" style="width:100%;" enctype="multipart/form-data">
-					<span id="span2">Category</span>
+				<form class="form" action="dataUserComplaint.php" method="POST" style="width:100%;" enctype="multipart/form-data">
+					<span id="span2">Detail:</span>
 					<select id="category" name="category" style="width:30%;border-radius:12px;height:37px;"> 
 						<option>Other</option>
-						<option>Faculty</option>
-						<option>Student</option>
+						<option>Refund</option>
+						<option>complaint</option>
 					</select>
-					<span id="span2" style="margin-left:20px;">Sub Categry</span>
+					<span id="span2" style="margin-left:20px;">Email:</span>
 					<input type="text" name="subcategory" style="width:30%;border-radius:5px;height:37px; border:.8px solid aqua;" placeholder="Please Enter a subcategory..">
 					<br /><br />
-					<span id="span2">Nature of Complaint</span><input type="text" name="nature" class="form-control in2" placeholder="Regarding to ...."><br />
-					<span id="span">Complaint</span>
+					<span id="span2">Full Name:</span><input type="text" name="nature" class="form-control in2" placeholder="Regarding to ...."><br />
+					<span id="span">Complaint:</span>
 					<textarea name="comp" class="form-control in1" placeholder="Feel free to write. Your complaint is secure." style="height:200px;"></textarea><br />
-					<br /><span id="span">Regarding File (If any) Max Size 2Mb</span><input name="f2" type="file" class="form-control" >
-				<br />
+					
 					<input type="submit"  class="btn btn-success " style="width:auto ;padding:10px;padding-left:50px;padding-right:50px;"  value="Send"><br />
 				</form>
 			</div>
