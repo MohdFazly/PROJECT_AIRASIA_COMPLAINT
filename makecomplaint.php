@@ -540,7 +540,7 @@ if($conn)
 			
 			<!----------------------------------------------------------------------------------------editinfo-->
 						<!----------------------------------------------------------------------------------------makecomp-->
-			<?php include('dataUserComplaint.php') ?>
+		
 			
 						<div class="" id="makecomplaint" style="width:100%;display:none;border-radius:15px;padding:15px;margin:10px;background-color:rgba(32, 76, 5, 0.1);border:1px solid aqua;">
 				<h4>>Make a complaint<hr /></h4>
