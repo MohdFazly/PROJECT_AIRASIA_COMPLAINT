@@ -525,12 +525,12 @@ if($conn)
 			<div class="" id="editinfo" style="width:90%;display:none;border-radius:15px;padding:15px;margin:10px;background-color:rgba(32, 76, 5, 0.1);border:1px solid aqua;">
 				<h4>>Personal Information<hr /></h4>
 				<form class="form" action="userupdateinfo" method="POST" style="width:100%;">
-					<span id="span">First Name</span><input type="text"  name="fname" class="form-control in1" placeholder="First name" value="<?php echo $fname; ?>"><br />
-					<span id="span">Last Name</span><input type="text" name="lname" class="form-control in1" placeholder="Last name" value="<?php echo $lname; ?>"><br />
-					<span id="span">Email</span><input type="text" name="email" class="form-control in1" placeholder="Email" value="<?php echo $email; ?>"><br />
-					<span id="span">Phone number</span><input type="text" name="phone" class="form-control in1" placeholder="Phone number" value="<?php echo $phone; ?>"><br />
+					<span id="span">First Name</span><input type="text"  name="fname" class="form-control in1" placeholder="First name" value="<?php echo $fname; ?>" required><br />
+					<span id="span">Last Name</span><input type="text" name="lname" class="form-control in1" placeholder="Last name" value="<?php echo $lname; ?>"required><br />
+					<span id="span">Email</span><input type="text" name="email" class="form-control in1" placeholder="Email" value="<?php echo $email; ?>"required><br />
+					<span id="span">Phone number</span><input type="text" name="phone" class="form-control in1" placeholder="Phone number" value="<?php echo $phone; ?>"required><br />
 					<span id="span">Gender</span>
-					<select name="gender" class="form-control in1" style="padding:2px;"  value="<?php echo $gender; ?>">
+					<select name="gender" class="form-control in1" style="padding:2px;"  value="<?php echo $gender; ?>"required>
 						<option>Male</option>
 						<option>Fe Male</option>
 					</select><br />
@@ -544,19 +544,19 @@ if($conn)
 			
 						<div class="" id="makecomplaint" style="width:100%;display:none;border-radius:15px;padding:15px;margin:10px;background-color:rgba(32, 76, 5, 0.1);border:1px solid aqua;">
 				<h4>>Make a complaint<hr /></h4>
-				<form class="form" action="dataUserComplaint.php" method="POST" style="width:100%;" enctype="multipart/form-data">
+				<form class="form" action="dataUserComplaint.php" method="POST" style="width:100%;">
 					<span id="span2">Detail:</span>
-					<select id="comCategory" name="comCategory" style="width:30%;border-radius:12px;height:37px;"> 
+					<select id="comCategory" name="comCategory" style="width:30%;border-radius:12px;height:37px;"required> 
 						<option>Other</option>
 						<option>Refund</option>
 						<option>complaint</option>
 					</select>
 					<span id="span2" style="margin-left:20px;">Email:</span>
-					<input type="text" name="email" style="width:30%;border-radius:5px;height:37px; border:.8px solid aqua;" placeholder="Please Enter a Email...">
+					<input type="text" name="email" style="width:30%;border-radius:5px;height:37px; border:.8px solid aqua;" placeholder="Please Enter a Email..."required>
 					<br /><br />
-					<span id="span2">Full Name:</span><input type="text" name="fullname" class="form-control in2" placeholder="Please Enter you fullname..."><br />
+					<span id="span2">Full Name:</span><input type="text" name="fullname" class="form-control in2" placeholder="Please Enter you fullname..."required><br />
 					<span id="span">Complaint:</span>
-					<textarea name="comDescription" class="form-control in1" placeholder="Feel free to write. Your complaint is secure." style="height:200px;"></textarea><br />
+					<textarea name="comDescription" class="form-control in1" placeholder="Feel free to write. Your complaint is secure." style="height:200px;"required></textarea><br />
 					
 					<input type="submit"  class="btn btn-success" name="btn-success" style="width:auto ;padding:10px;padding-left:50px;padding-right:50px;"  value="Send"><br />
 				</form>

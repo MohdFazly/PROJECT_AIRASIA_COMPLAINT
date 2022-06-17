@@ -2,13 +2,13 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
+$dbname= "projectairasia";
 
 // Create connection
-$db = mysqli_connect($servername, $username, $password);
+$conn = mysqli_connect($servername, $username, $password,$dbname);
 
 // Check connection
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
-}
-echo "Connected successfully";
+if ($conn -> error){
+  die ("Connection failed: " . $conn -> connection_error);
+} 
 ?>
