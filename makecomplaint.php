@@ -4,6 +4,7 @@ $username='root';
 $password='';
 $dbname='project';
 
+
 $conn=mysqli_connect($servername,$username,$password,$dbname);
 if($conn)
 {
@@ -85,7 +86,7 @@ if($conn)
  ?>
 <html>
 	<head>
-			<title><?php echo $user;?></title>
+			<title>Make Complaint</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -506,18 +507,7 @@ if($conn)
 			
 			<div class="" id="dashboard" style="width:100%;display:block;padding:20px;">
 			<h4>>Dashboard<hr /></h4>
-				<div id="file1" onclick="pending()" style="cursor:pointer;">
-					<i class="fa fa-file-text" style=""></i>
-					<p id="file12" style="display:block;font-size:15px;text-align:center;">Pending complaints<div id="pen"><?php echo $pend; ?></div></p>
-				</div>
-					<div id="file2" onclick="inpro()" style="cursor:pointer;">
-						<i class="fa fa-file-text" style=""></i>
-						<p id="file22" style="display:block;font-size:15px;text-align:center;">in progress complaints<div id="pen2"><?php echo $inpro; ?></div></p>
-					</div>
-						<div id="file3" onclick="completed()" style="cursor:pointer;">
-							<i class="fa fa-file-text" style=""></i>
-							<p id="file32" style="display:block;font-size:15px;text-align:center;">Completed complaints<div id="pen3"><?php echo $compl; ?></div></p>
-						</div>
+			
 			</div>
 			
 			<!----------------------------------------------------------------------------------------DASHBOARD-->
@@ -539,7 +529,7 @@ if($conn)
 			</div>
 			
 			<!----------------------------------------------------------------------------------------editinfo-->
-						<!----------------------------------------------------------------------------------------makecomp-->
+			<!----------------------------------------------------------------------------------------makecomp-->
 
 			
 						<div class="" id="makecomplaint" style="width:100%;display:none;border-radius:15px;padding:15px;margin:10px;background-color:rgba(32, 76, 5, 0.1);border:1px solid aqua;">
@@ -549,7 +539,7 @@ if($conn)
 					<select id="comCategory" name="comCategory" style="width:30%;border-radius:12px;height:37px;"required> 
 						<option>Other</option>
 						<option>Refund</option>
-						<option>complaint</option>
+						<option>Reschedule</option>
 					</select>
 					<span id="span2" style="margin-left:20px;">Email:</span>
 					<input type="text" name="email" style="width:30%;border-radius:5px;height:37px; border:.8px solid aqua;" placeholder="Please Enter a Email..."required>
