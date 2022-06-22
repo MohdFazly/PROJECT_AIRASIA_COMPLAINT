@@ -25,7 +25,7 @@
 <form method="post" action="register.php">
 	<div class="input-group">
 		<label>Username</label>
-		<input type="username" name="username" value="">
+		<input type="fullname" name="fullname" value="">
 	</div>
 	<div class="input-group">
 		<label>Email</label>
