@@ -3,6 +3,8 @@
 <html>
 <head>
 	<title>Complaint Airasia</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -17,7 +19,15 @@
 	border: 1px solid #e35300;
 	border-bottom: none;
 	border-radius: 10px 10px 0px 0px;
-	padding: 20px;
+	padding: 5px;
+}
+.btn {
+	padding: 10px;
+	font-size: 15px;
+	color: rgb(246, 17, 17);
+	background: #e83408;
+	border: none;
+	border-radius: 5px;
 }
 </style>
 
@@ -30,14 +40,14 @@
 
 		<div class="input-group">
 			<label>Email</label>
-			<input type="text" name="email" >
+			<input type="text" name="email" required>
 		</div>
 		<div class="input-group">
 			<label>Password</label>
-			<input type="password" name="password">
+			<input type="password" name="password"required>
 		</div>
-		<div class="input-group">
-			<button type="submit" class="btn" name="login_btn">Login</button>
+		<div class="w3-container">
+		<button class="w3-button w3-red w3-round-large" name="login_btn" >Login</button>
 		</div>
 		<p>
 			Not yet a member? <a href="register.php">Sign up</a>

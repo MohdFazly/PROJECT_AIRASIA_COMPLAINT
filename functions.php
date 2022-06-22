@@ -121,7 +121,7 @@ function login(){
 	if (count($errors) == 0) {
 		$password = md5($password);
 
-		$query = "SELECT * FROM users WHERE fullname='$email' AND password='$password' LIMIT 1";
+		$query = "SELECT * FROM users WHERE email='$email' AND password='$password' LIMIT 1";
 		$results = mysqli_query($db, $query);
 
 		if (mysqli_num_rows($results) == 1) { // user found
@@ -139,7 +139,7 @@ function login(){
 				header('location: index.php');
 			}
 		}else {
-			array_push($errors, "Wrong fullname/password combination");
+			array_push($errors, "Wrong email or password combination");
 		}
 	}
 }

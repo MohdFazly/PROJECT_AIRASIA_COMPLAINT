@@ -2,7 +2,9 @@
 <html>
 <head>
 
-  <link rel="stylesheet" href="main.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="main.css">
 
 <?php include('functions.php') ?>
 
@@ -20,18 +22,23 @@
 
 .header {
 	width: 40%;
-	margin: 50px auto 0px;
+	margin: 30px auto 0px;
 	color: white;
 	background: #da4646;
 	text-align: center;
 	border: 1px solid #e35300;
 	border-bottom: none;
 	border-radius: 10px 10px 0px 0px;
-	padding: 20px;
+	padding: 5px;
 }
 
-.input-group {
-	margin: 10px 0px 10px 0px;
+.btn {
+	padding: 10px;
+	font-size: 15px;
+	color: rgb(246, 17, 17);
+	background: #e83408;
+	border: none;
+	border-radius: 5px;
 }
 </style>
 
@@ -55,8 +62,8 @@
 		<label>Confirm password:</label>
 		<input type="password" name="password_2"required>
 	</div>
-	<div class="Bregister">
-		<button type="submit" class="btn" name="register_btn">Register</button>
+	<div class="w3-container">
+		<button class="w3-button w3-red w3-round-large" name="register_btn" >Login</button>
 	</div>
 	<p>
 		Already a sign up? <a href="login.php">Sign in</a>
