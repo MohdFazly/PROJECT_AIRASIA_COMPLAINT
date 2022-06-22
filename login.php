@@ -6,6 +6,21 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+
+<style>
+.header {
+	width: 40%;
+	margin: 50px auto 0px;
+	color: white;
+	background: #da4646;
+	text-align: center;
+	border: 1px solid #e35300;
+	border-bottom: none;
+	border-radius: 10px 10px 0px 0px;
+	padding: 20px;
+}
+</style>
+
 	<div class="header">
 		<h2>Login</h2>
 	</div>

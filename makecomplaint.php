@@ -448,7 +448,7 @@ if($conn)
 		</script>
 	</head>
 	<body>
-				<nav class="navbar-nav nav2 navbar-expand-sm bg-primary">
+				<nav class="navbar-nav nav2 navbar-expand-sm bg-danger">
 
     <i class="fa fa-reorder" onclick="callsh()" style="cursor:pointer;font-size:24px;margin:10px 2px 0px 20px;color:white"></i>		
 		<div class="nav-item item1" style="margin-left:5%">

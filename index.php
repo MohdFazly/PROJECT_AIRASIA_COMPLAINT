@@ -35,7 +35,7 @@ if (isset($_GET['logout'])) {
 </head>
 <body>
 
-<nav class="navbar-nav navbar-expand-sm bg-dark">
+<nav class="navbar-nav navbar-expand-sm bg-danger">
 		<div class="nav-item item1" style="margin-left:5%">
 				<h2 onclick='window.open("index.php");' style="cursor:pointer">AirAsia Complaint System</h2>
 		</div>
@@ -67,7 +67,7 @@ if (isset($_GET['logout'])) {
 
 			<div>
 				<?php  if (isset($_SESSION['user'])) : ?>
-					<strong><?php echo $_SESSION['user']['username']; ?></strong>
+					<strong><?php echo $_SESSION['user']['fullname']; ?></strong>
 
 					<small>
 						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i> 

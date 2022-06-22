@@ -5,7 +5,7 @@ session_start();
 $db = mysqli_connect('localhost', 'root', '', 'projectairasia');
 
 // variable declaration
-$username = "";
+$fullname = "";
 $email    = "";
 $errors   = array(); 
 
@@ -17,17 +17,17 @@ if (isset($_POST['register_btn'])) {
 // REGISTER USER
 function register(){
 	// call these variables with the global keyword to make them available in function
-	global $db, $errors, $username, $email;
+	global $db, $errors, $fullname, $email;
 
 	// receive all input values from the form. Call the e() function
     // defined below to escape form values
-	$username    =  e($_POST['fullname']);
+	$fullname    =  e($_POST['fullname']);
 	$email       =  e($_POST['email']);
 	$password_1  =  e($_POST['password_1']);
 	$password_2  =  e($_POST['password_2']);
 
 	// form validation: ensure that the form is correctly filled
-	if (empty($username)) { 
+	if (empty($fullname)) { 
 		array_push($errors, "Fullname is required"); 
 	}
 	if (empty($email)) { 
@@ -53,7 +53,7 @@ function register(){
 			header('location: home.php');
 		}else{
 			$query = "INSERT INTO users (fullname, email, user_type, password) 
-					  VALUES('$username', '$email', 'user', '$password')";
+					  VALUES('$fullname', '$email', 'user', '$password')";
 			mysqli_query($db, $query);
 
 			// get id of the created user
@@ -121,7 +121,7 @@ function login(){
 	if (count($errors) == 0) {
 		$password = md5($password);
 
-		$query = "SELECT * FROM users WHERE username='$email' AND password='$password' LIMIT 1";
+		$query = "SELECT * FROM users WHERE fullname='$email' AND password='$password' LIMIT 1";
 		$results = mysqli_query($db, $query);
 
 		if (mysqli_num_rows($results) == 1) { // user found
@@ -139,7 +139,7 @@ function login(){
 				header('location: index.php');
 			}
 		}else {
-			array_push($errors, "Wrong username/password combination");
+			array_push($errors, "Wrong fullname/password combination");
 		}
 	}
 }
