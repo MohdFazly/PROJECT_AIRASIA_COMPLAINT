@@ -9,7 +9,7 @@ body {
 	color: white;
 	background: #de0909;
 	text-align: center;
-	border: 1px solid #B0C4DE;
+	border: 1px solid #fd4a03;
 	border-bottom: none;
 	border-radius: 10px 10px 0px 0px;
 	padding: 20px;
@@ -50,7 +50,7 @@ form, .content {
 .btn {
 	padding: 10px;
 	font-size: 15px;
-	color: white;
+	color: rgb(246, 17, 17);
 	background: #e83408;
 	border: none;
 	border-radius: 5px;
