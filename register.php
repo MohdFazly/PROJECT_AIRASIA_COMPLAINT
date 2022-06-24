@@ -55,6 +55,14 @@
 		<input type="email" name="email" value=""required>
 	</div>
 	<div class="input-group">
+		<label>Address:</label>
+		<input type="address" name="address" value=""required>
+	</div>
+	<div class="input-group">
+		<label>Date:</label>
+		<input type="date" name="date" value=""required>
+	</div>
+	<div class="input-group">
 		<label>Password:</label>
 		<input type="password" name="password_1"required>
 	</div>

@@ -7,6 +7,8 @@ $db = mysqli_connect('localhost', 'root', '', 'projectairasia');
 // variable declaration
 $fullname = "";
 $email    = "";
+$address  = "";
+$date    = "";
 $errors   = array(); 
 
 // call the register() function if register_btn is clicked
@@ -17,12 +19,14 @@ if (isset($_POST['register_btn'])) {
 // REGISTER USER
 function register(){
 	// call these variables with the global keyword to make them available in function
-	global $db, $errors, $fullname, $email;
+	global $db, $errors, $fullname, $email, $address, $date;
 
 	// receive all input values from the form. Call the e() function
     // defined below to escape form values
 	$fullname    =  e($_POST['fullname']);
 	$email       =  e($_POST['email']);
+	$address       =  e($_POST['address']);
+	$date       =  e($_POST['date']);
 	$password_1  =  e($_POST['password_1']);
 	$password_2  =  e($_POST['password_2']);
 
@@ -46,14 +50,14 @@ function register(){
 
 		if (isset($_POST['user_type'])) {
 			$user_type = e($_POST['user_type']);
-			$query = "INSERT INTO users (fullname, email, user_type, password) 
-					  VALUES('$fullname', '$email', '$user_type', '$password')";
+			$query = "INSERT INTO users (fullname, email, address, date, user_type, password) 
+					  VALUES('$fullname', '$email','$address', '$date', '$user_type', '$password')";
 			mysqli_query($db, $query);
 			$_SESSION['success']  = "New user successfully created!!";
 			header('location: home.php');
 		}else{
-			$query = "INSERT INTO users (fullname, email, user_type, password) 
-					  VALUES('$fullname', '$email', 'user', '$password')";
+			$query = "INSERT INTO users (fullname, email, address, date, user_type, password) 
+					  VALUES('$fullname', '$email', $address, $date, 'user', '$password')";
 			mysqli_query($db, $query);
 
 			// get id of the created user
