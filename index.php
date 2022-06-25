@@ -67,7 +67,7 @@ if (isset($_GET['logout'])) {
 
 			<div>
 				<?php  if (isset($_SESSION['user'])) : ?>
-					<strong><?php echo $_SESSION['user']['fullname']; ?></strong>
+					<strong><?php echo $_SESSION['user']['user']; ?></strong>
 
 					<small>
 						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i> 
