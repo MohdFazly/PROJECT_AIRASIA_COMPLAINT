@@ -37,7 +37,7 @@ CREATE TABLE `officer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `admin`
+-- Dumping data for table `officer`
 --
 
 INSERT INTO `officer` (`id`, `fullname`, `email`, `address`, /*`date`*/ `password`) VALUES
