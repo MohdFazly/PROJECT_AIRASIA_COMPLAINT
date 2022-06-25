@@ -34,7 +34,7 @@ CREATE TABLE `officer` (
   `address` varchar(100) NOT NULL,
   /*`date` varchar(100) NOT NULL,*/
   `password` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+); ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `officer`
