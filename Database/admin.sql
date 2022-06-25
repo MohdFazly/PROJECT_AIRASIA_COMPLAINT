@@ -40,7 +40,7 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `users` (`id`, `fullname`, `email`, `address`, `date`, `password`) VALUES
+INSERT INTO `admin` (`id`, `fullname`, `email`, `address`, `date`, `password`) VALUES
 (1, 'fazly', 'mohdfazly@gmail.com', 'user', '202cb962ac59075b964b07152d234b70'),
 (2, 'fazly', 'mohdfazly@gmail.com', 'user', '202cb962ac59075b964b07152d234b70'),
 (3, 'ali', 'ali@gmail.com', 'user', '827ccb0eea8a706c4c34a16891f84e7b'),
