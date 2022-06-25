@@ -39,7 +39,7 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `user_type`, `password`) VALUES
+INSERT INTO `users` (`id`, `fullname`, `email`, `address`, `password`) VALUES
 (1, 'fazly', 'mohdfazly@gmail.com', 'user', '202cb962ac59075b964b07152d234b70'),
 (2, 'fazly', 'mohdfazly@gmail.com', 'user', '202cb962ac59075b964b07152d234b70'),
 (3, 'ali', 'ali@gmail.com', 'user', '827ccb0eea8a706c4c34a16891f84e7b'),
