@@ -37,11 +37,11 @@ CREATE TABLE `officer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `officer`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `officer` (`id`, `fullname`, `email`, `address`, /*`date`*/ `password`) VALUES
-(1, 'fazly', 'mohdfazly@gmail.com', 'lahad datu', '202cb962ac59075b964b07152d234b70');
+(1, 'mar', 'mar@gmail.com', 'lahad datu', '202cb962ac59075b964b07152d234b71');
 
 --
 -- Indexes for dumped tables
