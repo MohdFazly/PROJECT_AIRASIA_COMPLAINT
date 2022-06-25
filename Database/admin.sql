@@ -32,7 +32,7 @@ CREATE TABLE `admin` (
   `fullname` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `address` varchar(100) NOT NULL,
-  `date` varchar(100) NOT NULL,
+  /*`date` varchar(100) NOT NULL,*/
   `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -40,7 +40,7 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `fullname`, `email`, `address`, `date`, `password`) VALUES
+INSERT INTO `admin` (`id`, `fullname`, `email`, `address`, /*`date`*/, `password`) VALUES
 (1, 'fazly', 'mohdfazly@gmail.com', 'lahad datu', '202cb962ac59075b964b07152d234b70');
 
 --
