@@ -37,10 +37,10 @@ CREATE TABLE `officer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `admin`
+-- Dumping data for table `officer`
 --
 
-INSERT INTO `officer` (`id`, `fullname`, `email`, `address`, /*`date`*/, `password`) VALUES
+INSERT INTO `officer` (`id`, `fullname`, `email`, `address`, /*`date`*/ `password`) VALUES
 (1, 'fazly', 'mohdfazly@gmail.com', 'lahad datu', '202cb962ac59075b964b07152d234b70');
 
 --
@@ -48,7 +48,7 @@ INSERT INTO `officer` (`id`, `fullname`, `email`, `address`, /*`date`*/, `passwo
 --
 
 --
--- Indexes for table `admin`
+-- Indexes for table `officer`
 --
 ALTER TABLE `officer`
   ADD PRIMARY KEY (`id`);
@@ -58,7 +58,7 @@ ALTER TABLE `officer`
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT for table `officer`
 --
 ALTER TABLE `officer`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
