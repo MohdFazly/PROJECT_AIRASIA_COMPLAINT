@@ -70,8 +70,7 @@
 		<label>Confirm password:</label>
 		<input type="password" name="password_2"required>
 	</div>
-	<div class="w3-container">
-		<button class="w3-button w3-red w3-round-large" name="register_btn" >Login</button>
+		<button type="submit" class="btn" name="register_btn">Register</button>
 	</div>
 	<p>
 		Already a sign up? <a href="login.php">Sign in</a>
