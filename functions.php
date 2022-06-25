@@ -30,19 +30,6 @@ function register(){
 	$password_1  =  e($_POST['password_1']);
 	$password_2  =  e($_POST['password_2']);
 
-	// form validation: ensure that the form is correctly filled
-	if (empty($fullname)) { 
-		array_push($errors, "Fullname is required"); 
-	}
-	if (empty($email)) { 
-		array_push($errors, "Email is required"); 
-	}
-	if (empty($password_1)) { 
-		array_push($errors, "Password is required"); 
-	}
-	if ($password_1 != $password_2) {
-		array_push($errors, "The two passwords do not match");
-	}
 
 	// register user if there are no errors in the form
 	if (count($errors) == 0) {
