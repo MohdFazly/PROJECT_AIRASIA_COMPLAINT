@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'config.php';
 
 echo "<table border='1'><tr><th>ID</th><th>FullName</th>";
@@ -16,6 +17,3 @@ while ($row = mysqli_fetch_row($result))
 mysqli_free_result($result);
 
 ?>
-
-</body>
-</html>
