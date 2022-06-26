@@ -2,7 +2,7 @@
 $servername='localhost';
 $username='root';
 $password='';
-$dbname='project';
+$dbname='projectairasia';
 
 
 $conn=mysqli_connect($servername,$username,$password,$dbname);
