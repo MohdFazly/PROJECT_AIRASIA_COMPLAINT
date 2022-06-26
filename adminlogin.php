@@ -1,7 +1,8 @@
-<?php include('adminloginaction.php') ?>
+<?php include('adminfunctions.php') ?>
 <!DOCTYPE html>
 <html>
 <head>
+
 	<title>Complaint Airasia</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -36,7 +37,7 @@
 	</div>
 	<form method="post" action="adminlogin.php">
 
-		<?php echo display_error(); ?>
+		<?php include('errors.php'); ?>
 
 		<div class="input-group">
 			<label>Email</label>
@@ -49,7 +50,12 @@
 		<div class="w3-container">
 		<button class="w3-button w3-red w3-round-large" name="login_admin" >Login</button>
 		</div>
-		
+		<p>
+            New Here?
+            <a href="adminregister.php">
+                Click here to register!
+            </a>
+        </p>
 	</form>
 </body>
 </html>
