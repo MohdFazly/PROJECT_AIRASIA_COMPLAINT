@@ -35,7 +35,7 @@
 .btn {
 	padding: 10px;
 	font-size: 15px;
-	color: rgb(255, 255, 255);
+	color: rgb(246, 7, 17);
 	background: #e83408;
 	border: none;
 	border-radius: 5px;
