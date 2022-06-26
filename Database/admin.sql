@@ -24,39 +24,33 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Table structure for table `admin`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `admin` (
   `id` int(10) NOT NULL,
   `fullname` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `address` varchar(100) NOT NULL,
+  /*`date` varchar(100) NOT NULL,*/
   `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `admin`
 --
 
-INSERT INTO `users` (`id`, `fullname`, `email`, `address`, `password`) VALUES
-(1, 'fazly', 'mohdfazly@gmail.com', 'user', '202cb962ac59075b964b07152d234b70'),
-(2, 'fazly', 'mohdfazly@gmail.com', 'user', '202cb962ac59075b964b07152d234b70'),
-(3, 'ali', 'ali@gmail.com', 'user', '827ccb0eea8a706c4c34a16891f84e7b'),
-(4, 'fazly', 'mohdfazly@gmail.com', 'user', '827ccb0eea8a706c4c34a16891f84e7b'),
-(5, 'fazly', 'mohdfazly@gmail.com', 'user', '81dc9bdb52d04dc20036dbd8313ed055'),
-(6, 'baba', 'baba@gmail.com', 'admin', '81dc9bdb52d04dc20036dbd8313ed055'),
-(7, 'wawan', 'wawan@gmail.com', 'user', '0a000f688d85de79e3761dec6816b2a5'),
-(8, 'khalid', 'khalid@gmail.com', 'user', '794761a765ceca759536a1bf39100142');
+INSERT INTO `admin` (`id`, `fullname`, `email`, `address`, /*`date`*/ `password`) VALUES
+(1, 'fazly', 'mohdfazly@gmail.com', 'lahad datu', '202cb962ac59075b964b07152d234b70');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `users`
+-- Indexes for table `admin`
 --
-ALTER TABLE `users`
+ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -64,9 +58,9 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT for table `admin`
 --
-ALTER TABLE `users`
+ALTER TABLE `admin`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
