@@ -27,7 +27,7 @@ if (isset($_POST['login_officer'])) {
     $password = mysqli_real_escape_string($db, $_POST['password']);
   
     if (empty($email)) {
-        array_push($errors, "email is required");
+        array_push($errors, "Email is required");
     }
     if (empty($password)) {
         array_push($errors, "Password is required");

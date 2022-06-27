@@ -2,7 +2,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
 <?php include('officerloginaction.php') ?>
+=======
+<?php include('officerloginaction.php')?>
+>>>>>>> c03c0de26475888d0f0f67ae1d74ff9bdd093abd
 	<title>Complaint Airasia</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -49,6 +53,8 @@
 		</div>
 		<div class="w3-container">
 		<button class="w3-button w3-red w3-round-large" name="login_officer" >Login</button>
+		<a href="home_officer.php">login</a>
+		
 		</div>
 		
 	</form>

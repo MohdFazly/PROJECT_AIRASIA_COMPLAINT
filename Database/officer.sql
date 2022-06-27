@@ -31,7 +31,6 @@ CREATE TABLE `officer` (
   `id` int(10) NOT NULL,
   `fullname` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `address` varchar(100) NOT NULL,
   /*`date` varchar(100) NOT NULL,*/
   `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -40,8 +39,8 @@ CREATE TABLE `officer` (
 -- Dumping data for table `officer`
 --
 
-INSERT INTO `officer` (`id`, `fullname`, `email`, `address`, /*`date`*/ `password`) VALUES
-(1, 'mar', 'mar@gmail.com', 'lahad datu', '202cb962ac59075b964b07152d234b71');
+INSERT INTO `officer` (`id`, `fullname`, `email`, /*`date`*/ `password`) VALUES
+(1, 'mar', 'mar@gmail.com', '202cb962ac59075b964b07152d234b71');
 
 --
 -- Indexes for dumped tables

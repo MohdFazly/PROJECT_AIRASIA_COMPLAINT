@@ -15,5 +15,9 @@ while ($row = mysqli_fetch_row($result))
     }
 
 mysqli_free_result($result);
+<<<<<<< HEAD
+=======
+?>
+>>>>>>> c03c0de26475888d0f0f67ae1d74ff9bdd093abd
 
 ?>
