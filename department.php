@@ -12,7 +12,7 @@
 <body>
 <div class="" id="makecomplaint" method="post">
 				<h4>Department<hr /></h4>
-				<form class="form" action="dataUserComplaint.php" method="POST" style="width:100%;">
+				<form class="form" action="datadepartment.php" method="POST" style="width:100%;">
 					<span id="span2">Department List:</span>
 					<select id="comCategory" name="comCategory" style="width:30%;border-radius:12px;height:37px;"required> 
 						<option>Department Finance</option>
