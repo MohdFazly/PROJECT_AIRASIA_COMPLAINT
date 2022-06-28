@@ -29,7 +29,7 @@
             <input type="address" name="address" value="<?php echo $address; ?>">
         </div>
         <div class="input-group">
-            <label>Enter Password;</label>
+            <label>Enter Password:</label>
             <input type="password" name="password_1">
         </div>
         <div class="input-group">
