@@ -11,5 +11,5 @@ values ('$_POST[fullname]','$_POST[email]','$_POST[comCategory]','$_POST[comDesc
 	}
 echo "<script
 type='text/jscript'>alert('Commplaint has been submitted!')</script>";
-header('refresh:1 url=makecomplaint.php');
+header('refresh:1 url=makecomplaint1.php');
 ?>
