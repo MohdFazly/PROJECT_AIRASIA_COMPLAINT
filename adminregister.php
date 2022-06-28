@@ -11,8 +11,8 @@
     <div class="header">
         <h2>Register</h2>
     </div>
-      
-    <form method="post" action="register.php">
+
+    <form method="post" action="adminData.php">
   
         <?php include('errors.php'); ?>
   
@@ -41,4 +41,4 @@
         </div>
  
 <p>
-         Already having an account? <a href="login.php"> Login Here! </a> </p>
+         Already having an account? <a href="adminlogin.php"> Login Here! </a> </p>

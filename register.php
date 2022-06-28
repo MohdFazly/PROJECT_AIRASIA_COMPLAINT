@@ -45,7 +45,7 @@
 <div class="header">
 	<h2>Register: User</h2>
 </div>
-<form method="post" action="register.php">
+<form method="post" action="dataUserComplaint.php">
 	<div class="input-group">
 		<label>Fullname:</label>
 		<input type="fullname" name="fullname" value=""required>
