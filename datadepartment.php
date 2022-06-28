@@ -11,6 +11,6 @@ values ('$_POST[departmentList]','$_POST[fullname]','$_POST[detailDescription]')
 		die ('Error: ' .mysqli_error($conn));
 	}
 echo "<script
-type='text/jscript'>alert('Commplaint has been submitted!')</script>";
+type='text/jscript'>alert('Action has been taken!')</script>";
 header('refresh:1 url=department.php');
 ?>
