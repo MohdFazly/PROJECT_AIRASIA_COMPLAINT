@@ -1,21 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="main.css">
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="main.css">
 	<title>Make Complaint</title>
-</head>
-<body>
 
-<div class="" id="makecomplaint" method="post">
+</head> 
+<body> 
+    <?php 
+    session_start(); 
+    echo "<html>"; 
+ 
+    //$_SESSION["myLogin"] = "myWebsite"; 
+    //echo "A value saved in the session named as myLogin.<br>"; 
+ 
+   // $_SESSION["myColor"] = "Blue"; 
+    //echo "A value saved in the session named as myColor.<br>"; 
+ 
+    //echo "Click <a href=next_page.php>Next Page</a>"."to retrieve the values.<br"; 
+ 
+   // echo "</html><br>"; 
+    ?> 
+
+    <div class="" id="makecomplaint" method="post">
 				<h4>Make a Complaint<hr /></h4>
 				
 				<div>
 				<span id="span">Name:</span>
+                <div>
+				<?php  if (isset($_SESSION['user'])) : ?>
+					<strong><?php echo $_SESSION['user']['fullname']; ?></strong>
+
+					<small>
+						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']); ?>)</i> 
+						<br>
+					</small>
+
+					</div>
+                    <?php endif ?>
 
 				<form class="form" action="dataUserComplaint.php" method="POST" style="width:100%;">
 					<span id="span2">Detail:</span>
@@ -23,7 +49,7 @@
 						<option>Other</option>
 						<option>Refund</option>
 						<option>Reschedule</option>
-						<option>Food</option>
+                        <option>Food</option>
 						<option>Mishandled Baggage</option>
 					</select>
 
@@ -34,5 +60,6 @@
 					<input type="submit"  class="btn btn-success" name="btn-success" style="width:auto ;padding:10px;padding-left:50px;padding-right:50px;"  value="Send"><br />
 				</form>
 			</div>
-</body>
-</html>
+  
+</head>
+<body>
