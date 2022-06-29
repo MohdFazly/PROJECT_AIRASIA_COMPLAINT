@@ -15,11 +15,11 @@
 
 				<div>
 				<span id="span">Name:</span>
-				<?php  if (isset($_SESSION['fullname'])) : ?>
-					<strong><?php echo $_SESSION['fullname']; ?></strong>
+				<?php  if (isset($_SESSION['user'])) : ?>
+					<strong><?php echo $_SESSION['user']; ?></strong>
 
 					<small>
-						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['fullname']); ?>)</i> 
+						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']); ?>)</i> 
 						<br>
 					</small>
 
