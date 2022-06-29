@@ -14,19 +14,16 @@
 				<h4>Make a Complaint<hr /></h4>
 
 				<div>
+				<span id="span">Name:</span>
 				<?php  if (isset($_SESSION['user'])) : ?>
 					<strong><?php echo $_SESSION['user']['fullname']; ?></strong>
 
 					<small>
-						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['email']); ?>)</i> 
+						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']); ?>)</i> 
 						<br>
-						<a href="index.php?logout='1'" style="color: red;">Logout</a>
 					</small>
 
 					</div>
-				<div style="width:50%" >
-				<a class="btn btn-danger" style="float:right;padding-left:30px;padding-right:30px;margin:10px;" href="makecomplaint1.php">MAKE COMPLAINT</a>
-				</div>
 
 				<?php endif ?>
 				</div>
@@ -40,12 +37,7 @@
 						<option>Food</option>
 						<option>Mishandled Baggage</option>
 					</select>
-					<span id="span2" style="margin-left:20px;">Email:</span>
-					<input type="text" name="email" style="width:30%;border-radius:5px;height:37px; border:.8px solid aqua;" placeholder="Please Enter a Email..."required>
-					<br /><br />
-					<span id="span2">Full Name:</span>
-					<input type="text" name="fullname" class="form-control in2" placeholder="Please Enter you fullname..."required><br />
-					<input type="date" name="date" class="form-control in2" placeholder="Please Enter you fullname..."required><br />
+
 					<span id="span">Complaint:</span>
 					<textarea name="comDescription" class="form-control in1" placeholder="Feel free to write. Your complaint is secure." style="height:200px;"required></textarea><br />
 					
