@@ -36,7 +36,7 @@
 					<strong><?php echo $_SESSION['user']['fullname']; ?></strong>
 
 					<small>
-						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']); ?>)</i> 
+						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['email']); ?>)</i> 
 						<br>
 					</small>
 
