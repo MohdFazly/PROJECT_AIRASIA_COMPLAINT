@@ -16,7 +16,7 @@
 				<div>
 				<span id="span">Name:</span>
 				<?php  if (isset($_SESSION['fullname'])) : ?>
-					<strong><?php echo $_SESSION['fullname']['fullname']; ?></strong>
+					<strong><?php echo $_SESSION['fullname']; ?></strong>
 
 					<small>
 						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['fullname']); ?>)</i> 
