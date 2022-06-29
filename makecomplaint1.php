@@ -20,8 +20,12 @@
 					<small>
 						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['email']); ?>)</i> 
 						<br>
+						<a href="index.php?logout='1'" style="color: red;">Logout</a>
 					</small>
 
+					</div>
+				<div style="width:50%" >
+				<a class="btn btn-danger" style="float:right;padding-left:30px;padding-right:30px;margin:10px;" href="makecomplaint1.php">MAKE COMPLAINT</a>
 				</div>
 
 				<?php endif ?>
@@ -31,7 +35,7 @@
 					<span id="span2">Detail:</span>
 					<select id="comCategory" name="comCategory" style="width:30%;border-radius:12px;height:37px;"required> 
 						<option>Other</option>
-						
+						<option>Refund</option>
 						<option>Reschedule</option>
 						<option>Food</option>
 						<option>Mishandled Baggage</option>
