@@ -39,6 +39,16 @@
 				<?php endif ?>
 				</div>
 
+				<?php
+
+				if (isset($_GET['logout'])) {
+				session_destroy();
+				unset($_SESSION['user']);
+				header("location: login.php");
+				}
+
+				?>
+
 				<form class="form" action="dataUserComplaint.php" method="POST" style="width:100%;">
 					<span id="span2">Detail:</span>
 					<select id="comCategory" name="comCategory" style="width:30%;border-radius:12px;height:37px;"required> 
