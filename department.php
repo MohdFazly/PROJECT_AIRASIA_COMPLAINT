@@ -14,11 +14,10 @@
 				<h4>Department<hr /></h4>
 				<form class="form" action="datadepartment.php" method="POST" style="width:100%;">
 					<span id="span2">Department List:</span>
-					<select id="DepartmentList" name="DepartmentList" style="width:30%;border-radius:12px;height:37px;"required> 
+					<select id="departmentList" name="departmentList" style="width:30%;border-radius:12px;height:37px;"required> 
 						<option>Department Finance</option>
 						<option>Department Lanside Operation </option>
 						<option>Department Information Management</option>
-						
 					</select>
 					<br /><br />
 					<span id="span2">Fullname:</span>
