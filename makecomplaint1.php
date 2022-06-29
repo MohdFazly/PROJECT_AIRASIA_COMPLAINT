@@ -31,7 +31,7 @@
 					<span id="span2">Detail:</span>
 					<select id="comCategory" name="comCategory" style="width:30%;border-radius:12px;height:37px;"required> 
 						<option>Other</option>
-						<option>Refund</option>
+						
 						<option>Reschedule</option>
 						<option>Food</option>
 						<option>Mishandled Baggage</option>
