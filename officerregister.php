@@ -9,10 +9,10 @@
  
 <body>
     <div class="header">
-        <h2>Register: Admin</h2>
+        <h2>Register: Officer</h2>
     </div>
 
-    <form method="post" action="adminData.php">
+    <form method="post" action="officerData.php">
   
         <?php include('errors.php'); ?>
   
@@ -30,15 +30,12 @@
         </div>
         <div class="input-group">
             <label>Enter Password:</label>
-            <input type="password" name="password_1">
+            <input type="password" name="password">
         </div>
-        <div class="input-group">
-            <label>Confirm password:</label>
-            <input type="password" name="password_2">
-        </div>
+        
         <div class="input-group">
             <button type="submit" class="btn" name="reg_user"> Register </button>
         </div>
  
 <p>
-         Already having an account? <a href="adminlogin.php"> Login Here! </a> </p>
+         Already having an account? <a href="officerlogin.php"> Login Here! </a> </p>

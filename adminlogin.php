@@ -35,7 +35,7 @@
 	<div class="header">
 		<h2>Login: Admin</h2>
 	</div>
-	<form method="post" action="adminlogin.php">
+	<form method="post" action="adminfunctions.php">
 
 		<?php include('errors.php'); ?>
 

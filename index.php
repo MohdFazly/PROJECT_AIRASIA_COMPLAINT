@@ -70,14 +70,14 @@ if (isset($_GET['logout'])) {
 					<strong><?php echo $_SESSION['user']['fullname']; ?></strong>
 
 					<small>
-						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i> 
+						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['email']); ?>)</i> 
 						<br>
 						<a href="index.php?logout='1'" style="color: red;">Logout</a>
 					</small>
 
 					</div>
 				<div style="width:50%" >
-				<a class="btn btn-danger" style="float:right;padding-left:30px;padding-right:30px;margin:10px;" href="makecomplaint.php">MAKE COMPLAINT</a>
+				<a class="btn btn-danger" style="float:right;padding-left:30px;padding-right:30px;margin:10px;" href="makecomplaint1.php">MAKE COMPLAINT</a>
 				</div>
 
 				<?php endif ?>

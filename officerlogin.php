@@ -1,11 +1,7 @@
-
+<?php include('officerloginaction.php') ?>
 <!DOCTYPE html>
 <html>
 <head>
-
-<?php include('officerloginaction.php') ?>
-
-<?php include('officerloginaction.php')?>
 
 	<title>Complaint Airasia</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -39,9 +35,9 @@
 	<div class="header">
 		<h2>Login: Officer</h2>
 	</div>
-	<form method="post" action="officerlogin.php">
+	<form method="post" action="officerloginaction.php">
 
-		<?php echo display_error(); ?>
+		<?php include('errors.php'); ?>
 
 		<div class="input-group">
 			<label>Email</label>
@@ -53,10 +49,13 @@
 		</div>
 		<div class="w3-container">
 		<button class="w3-button w3-red w3-round-large" name="login_officer" >Login</button>
-		<a href="home_officer.php">login</a>
-		
 		</div>
-		
+		<p>
+            New Here?
+            <a href="officerregister.php">
+                Click here to register!
+            </a>
+        </p>
 	</form>
 </body>
 </html>

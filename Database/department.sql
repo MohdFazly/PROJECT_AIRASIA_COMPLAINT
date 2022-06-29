@@ -39,7 +39,7 @@ CREATE TABLE `department` (
 
 INSERT INTO `department` (`departmentList`, `fullname`, `detailDescription`) VALUES
 ('', '', ''),
-('Department Finance', 'Liyana', 'Tolong bagi duit saya balik');
+('Department Finance', 'Liyana', 'Please take an action');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
