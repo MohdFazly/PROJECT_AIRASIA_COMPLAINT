@@ -15,11 +15,11 @@
 
 				<div>
 				<span id="span">Name:</span>
-				<?php  if (isset($_SESSION['user'])) : ?>
-					<strong><?php echo $_SESSION['user']['fullname']; ?></strong>
+				<?php  if (isset($_SESSION['fullname'])) : ?>
+					<strong><?php echo $_SESSION['fullname']['fullname']; ?></strong>
 
 					<small>
-						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']); ?>)</i> 
+						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['fullname']); ?>)</i> 
 						<br>
 					</small>
 
@@ -38,6 +38,7 @@
 						<option>Mishandled Baggage</option>
 					</select>
 
+				</br>
 					<span id="span">Complaint:</span>
 					<textarea name="comDescription" class="form-control in1" placeholder="Feel free to write. Your complaint is secure." style="height:200px;"required></textarea><br />
 					
