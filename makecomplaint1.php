@@ -10,20 +10,12 @@
 	<title>Make Complaint</title>
 </head>
 <body>
+<?php 
+session_start();
+?>
 <div class="" id="makecomplaint" method="post">
 				<h4>Make a Complaint<hr /></h4>
-
-				<?php if (isset($_SESSION['success'])) : ?>
-				<div class="error success" >
-				<h3>
-					<?php 
-						echo $_SESSION['success']; 
-						unset($_SESSION['success']);
-					?>
-				</h3>
-				</div>
-				<?php endif ?>
-
+				
 				<div>
 				<span id="span">Name:</span>
 				<?php  if (isset($_SESSION['user'])) : ?>
@@ -38,16 +30,6 @@
 
 				<?php endif ?>
 				</div>
-
-				<?php
-
-				if (isset($_GET['logout'])) {
-				session_destroy();
-				unset($_SESSION['user']);
-				header("location: login.php");
-				}
-
-				?>
 
 				<form class="form" action="dataUserComplaint.php" method="POST" style="width:100%;">
 					<span id="span2">Detail:</span>
