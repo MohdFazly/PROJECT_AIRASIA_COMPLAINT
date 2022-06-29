@@ -47,10 +47,10 @@
      				<input type="text" name="flightNumber" style="width:60%;border-radius:5px;height:37px; border:.8px solid aqua;" placeholder="Please Enter your flight number"required><br /><br />
 	 				
 					<span id="span2" style="margin-left:20px;">From:</span> 
-     				<input type="text" name="from" style="width:60%;border-radius:5px;height:37px; border:.8px solid aqua;" placeholder="Please Enter your departure location"required><br /><br />
+     				<input type="text" name="fromm" style="width:60%;border-radius:5px;height:37px; border:.8px solid aqua;" placeholder="Please Enter your departure location"required><br /><br />
 					
 					<span id="span2" style="margin-left:20px;">To:</span> 
-     				<input type="text" name="to" style="width:60%;border-radius:5px;height:37px; border:.8px solid aqua;" placeholder="Please Enter your arrival location"required><br /><br />
+     				<input type="text" name="too" style="width:60%;border-radius:5px;height:37px; border:.8px solid aqua;" placeholder="Please Enter your arrival location"required><br /><br />
 				
 					<span id="span">Complaint Description:</span>
 					<textarea name="comDescription" class="form-control in1" placeholder="Feel free to write. Your complaint is secure." style="height:200px;"required></textarea><br />

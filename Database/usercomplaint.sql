@@ -32,8 +32,8 @@ CREATE TABLE `usercomplaint` (
   `email` varchar(50) NOT NULL,
   `comCategory` varchar(100) NOT NULL,
   `flightNumber` varchar(100) NOT NULL,
-  `from` varchar(100) NOT NULL,
-  `to` varchar(100) NOT NULL,
+  `fromm` varchar(100) NOT NULL,
+  `too` varchar(100) NOT NULL,
   `comDescription` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -41,9 +41,9 @@ CREATE TABLE `usercomplaint` (
 -- Dumping data for table `usercomplaint`
 --
 
-INSERT INTO `usercomplaint` (`fullname`, `email`, `comCategory`,`flightNumber`, `from`, `to`, `comDescription`) VALUES
+INSERT INTO `usercomplaint` (`fullname`, `email`, `comCategory`,`flightNumber`, `fromm`, `too`, `comDescription`) VALUES
 ('', '', '', '', '', '', ''),
-('Mohd Fazly', 'mohdfazly@gmail.com', 'Refund', 'WAW123', 'KLIA2', 'Sandakan', 'reschedule suddenly');
+('Mohd Fazly', 'Mohdfazly@gmail.com', 'Refund', 'WAW123', 'KLIA2', 'Sandakan', 'reschedule suddenly');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
