@@ -33,7 +33,6 @@ CREATE TABLE `users` (
   `address` varchar(256) NOT NULL,
   `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `email` varchar(100) NOT NULL,
-  `user_type` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
