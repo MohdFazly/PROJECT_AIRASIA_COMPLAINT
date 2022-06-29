@@ -26,7 +26,6 @@
 					<br /><br />
 					<span id="span2">Full Name:</span>
 					<input type="text" name="fullname" class="form-control in2" placeholder="Please Enter you fullname..."required><br />
-					<span id="span2">Date:</span>
 					<input type="date" name="date" class="form-control in2" placeholder="Please Enter you fullname..."required><br />
 					<span id="span">Complaint:</span>
 					<textarea name="comDescription" class="form-control in1" placeholder="Feel free to write. Your complaint is secure." style="height:200px;"required></textarea><br />
