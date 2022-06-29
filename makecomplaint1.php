@@ -13,6 +13,17 @@
 <div class="" id="makecomplaint" method="post">
 				<h4>Make a Complaint<hr /></h4>
 
+				<?php if (isset($_SESSION['success'])) : ?>
+				<div class="error success" >
+				<h3>
+					<?php 
+						echo $_SESSION['success']; 
+						unset($_SESSION['success']);
+					?>
+				</h3>
+				</div>
+				<?php endif ?>
+
 				<div>
 				<span id="span">Name:</span>
 				<?php  if (isset($_SESSION['user'])) : ?>
