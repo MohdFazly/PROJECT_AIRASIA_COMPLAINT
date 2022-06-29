@@ -53,11 +53,21 @@
 						<option>Mishandled Baggage</option>
 					</select>
 
-				</br>
-					<span id="span">Complaint:</span>
+					<br /><br /><span id="span2" style="margin-left:20px;">Flight number:</span> 
+     				<input type="text" name="flightNumber" style="width:60%;border-radius:5px;height:37px; border:.8px solid aqua;" placeholder="Please Enter your flight number"required><br /><br />
+	 				
+					<span id="span2" style="margin-left:20px;">From:</span> 
+     				<input type="text" name="from" style="width:60%;border-radius:5px;height:37px; border:.8px solid aqua;" placeholder="Please Enter your departure location"required><br /><br />
+					
+					<span id="span2" style="margin-left:20px;">To:</span> 
+     				<input type="text" name="to" style="width:60%;border-radius:5px;height:37px; border:.8px solid aqua;" placeholder="Please Enter your arrival location"required><br /><br />
+				
+					<span id="span">Complaint Description:</span>
 					<textarea name="comDescription" class="form-control in1" placeholder="Feel free to write. Your complaint is secure." style="height:200px;"required></textarea><br />
 					
-					<input type="submit"  class="btn btn-success" name="btn-success" style="width:auto ;padding:10px;padding-left:50px;padding-right:50px;"  value="Send"><br />
+					<input type="submit"  class="btn btn-success" name="btn-success" style="width:auto ;padding:10px;padding-left:50px;padding-right:50px;"  value="Send">
+
+					<input type="submit"  class="btn btn-success" name="btn-success" style="width:auto ;padding:10px;padding-left:50px;padding-right:50px;"  value="Status"><br />
 				</form>
 			</div>
   
