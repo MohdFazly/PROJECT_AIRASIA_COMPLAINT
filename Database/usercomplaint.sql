@@ -42,7 +42,7 @@ CREATE TABLE `usercomplaint` (
 --
 
 INSERT INTO `usercomplaint` (`fullname`, `email`, `comCategory`,`flightNumber`, `from`, `to`, `comDescription`) VALUES
-('', '', '', ''),
+('', '', '', '', '', '', ''),
 ('Mohd Fazly', 'mohdfazly@gmail.com', 'Refund', 'WAW123', 'KLIA2', 'Sandakan', 'reschedule suddenly');
 COMMIT;
 
