@@ -12,6 +12,21 @@
 <body>
 <div class="" id="makecomplaint" method="post">
 				<h4>Make a Complaint<hr /></h4>
+
+				<div>
+				<?php  if (isset($_SESSION['user'])) : ?>
+					<strong><?php echo $_SESSION['user']['fullname']; ?></strong>
+
+					<small>
+						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['email']); ?>)</i> 
+						<br>
+					</small>
+
+				</div>
+
+				<?php endif ?>
+				</div>
+
 				<form class="form" action="dataUserComplaint.php" method="POST" style="width:100%;">
 					<span id="span2">Detail:</span>
 					<select id="comCategory" name="comCategory" style="width:30%;border-radius:12px;height:37px;"required> 
