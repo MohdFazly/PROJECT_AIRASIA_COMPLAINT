@@ -70,7 +70,7 @@ if (isset($_GET['logout'])) {
 					<strong><?php echo $_SESSION['user']['fullname']; ?></strong>
 
 					<small>
-						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['fullname']['email']); ?>)</i> 
+						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['email']); ?>)</i> 
 						<br>
 						<a href="index.php?logout='1'" style="color: red;">Logout</a>
 					</small>
