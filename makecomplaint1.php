@@ -13,27 +13,32 @@
 <body> 
     <?php 
     session_start(); 
-    echo "<html>"; 
+
     ?> 
+	
+	<form class="form" action="dataUserComplaint.php" method="POST" style="width:100%;">
+	<br>
 
     <div class="" id="makecomplaint" method="post">
 				<h4>Make a Complaint<hr /></h4>
 				
 				<div>
 				<span id="span">Name:</span>
-                <div>
 				<?php  if (isset($_SESSION['user'])) : ?>
-					<strong><?php echo $_SESSION['user']['fullname']; ?></strong>
-
-					<small>
-						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['email']); ?>)</i> 
+					 <input name="fullname" value="<?php echo $_SESSION['user']['fullname']; ?>" > </div>
+					
+					 <div>
+					<div>
+					<br>
+					<span id="span">Email:</span>
+						<i  style="color: #888;">
+						<input name="email" value="<?php echo $_SESSION['user']['email']; ?>" > </div>
 						<br>
-					</small>
 
 					</div>
                     <?php endif ?>
 
-				<form class="form" action="dataUserComplaint.php" method="POST" style="width:100%;">
+			
 					<span id="span2">Detail:</span>
 					<select id="comCategory" name="comCategory" style="width:30%;border-radius:12px;height:37px;"required> 
 						<option>Other</option>
@@ -57,7 +62,7 @@
 					
 					<input type="submit"  class="btn btn-success" name="btn-success" style="width:auto ;padding:10px;padding-left:50px;padding-right:50px;"  value="Send">
 
-					<input type="submit"  class="btn btn-success" name="btn-success" style="width:auto ;padding:10px;padding-left:50px;padding-right:50px;"  value="Status"><br />
+					<button type="submit"  class="btn btn-success" name="btn-success" style="width:auto ;padding:10px;padding-left:50px;padding-right:50px;"  value="Status"><br />
 				</form>
 			</div>
   
