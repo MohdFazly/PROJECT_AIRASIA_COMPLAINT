@@ -31,6 +31,9 @@ CREATE TABLE `usercomplaint` (
   `fullname` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `comCategory` varchar(100) NOT NULL,
+  `flightNumber` varchar(100) NOT NULL,
+  `fromm` varchar(100) NOT NULL,
+  `too` varchar(100) NOT NULL,
   `comDescription` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -38,11 +41,9 @@ CREATE TABLE `usercomplaint` (
 -- Dumping data for table `usercomplaint`
 --
 
-INSERT INTO `usercomplaint` (`fullname`, `email`, `comCategory`, `comDescription`) VALUES
-('', '', '', ''),
-('Mohd Fazly', 'mohdfazly@gmail.com', 'Refund', 'wewgr'),
-('qaqar', 'qaqar@gmail.com', 'complaint', 'saya nak complaint pasdnsdjkvdjkvvvvvvhnnfdklffdjkhkdhgkdhgkdhgkdhgkdhkdfhvkdfhvf.khv.fkhvkfjvkfhvkfjhvfdv elkfjldlfvjfoijfdoij feogierohfdohfoiu roiheroghoghhgurigh jreogireoghoghdoighro hregohregoehgofhgo rforefhfiureh;oreyotyro gheof;ofh'),
-('mardiana omar', 'mardiana@gmail.com', 'complaint', 'saya mardiana ingin buat complaint..asal ah mahal sangat,, budu la..bagus lagi naik masairlines..tapi sama jak mahalnya..aishh buat kapal sendiri lah :(');
+INSERT INTO `usercomplaint` (`fullname`, `email`, `comCategory`,`flightNumber`, `fromm`, `too`, `comDescription`) VALUES
+('', '', '', '', '', '', ''),
+('Mohd Fazly', 'Mohdfazly@gmail.com', 'Refund', 'WAW123', 'KLIA2', 'Sandakan', 'reschedule suddenly');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

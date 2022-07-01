@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 17, 2022 at 09:15 AM
+-- Generation Time: Jun 29, 2022 at 01:24 AM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `department` (
+  `id` int(11) NOT NULL,
   `departmentList` varchar(256) NOT NULL,
   `fullname` varchar(50) NOT NULL,
   `detailDescription` varchar(256) NOT NULL
@@ -37,9 +38,29 @@ CREATE TABLE `department` (
 -- Dumping data for table `department`
 --
 
-INSERT INTO `department` (`departmentList`, `fullname`, `detailDescription`) VALUES
-('', '', ''),
-('Department Finance', 'Liyana', 'Please take an action');
+INSERT INTO `department` (`id`, `departmentList`, `fullname`, `detailDescription`) VALUES
+(2, 'Department Finance', 'Liyana', 'Tolong bagi duit saya balik'),
+(7, 'Department Finance', 'nenna', 'wsded');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `department`
+--
+ALTER TABLE `department`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `department`
+--
+ALTER TABLE `department`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

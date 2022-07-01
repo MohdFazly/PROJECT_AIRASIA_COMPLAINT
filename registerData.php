@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 include 'config.php';
 
 $sql="INSERT INTO users (fullname,address,date,email,password)
-values ('$_POST[fullname]','$_POST[address]','$_POST[date]','$_POST[email]','$_POST['password']')";
+values ('$_POST[fullname]','$_POST[address]','$_POST[date]','$_POST[email]','$_POST[password]')";
 	if (!mysqli_query($conn,$sql)){
 		die ('Error: ' .mysqli_error($conn));
 	}
