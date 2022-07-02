@@ -19,6 +19,70 @@
 	<form class="form" action="dataUserComplaint.php" method="POST" style="width:100%;">
 	<br>
 
+	<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #FF2819;  
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.active {
+  background-color: #757376;
+}
+</style>
+
+<body>
+<!--Main Navigation-->
+<header>
+        <!-- Navbar -->
+        <!-- Navbar -->
+     
+    
+            <!-- GAMBARRRR
+            <li><a href="../student.php">
+                <img src=""   />
+            </a>      </li>    -->                                  
+            <!-- Search form -->
+            
+    
+            <!-- Right links -->
+           
+            <!-- Notification dropdown -->
+                <!-- Avatar -->
+<ul>
+  <li><a class="active" href="index.php">Home</a></li>
+  <li><a href="status.php">Status</a></li>
+  <li><a href="login.php">Logout</a></li>
+</ul>
+                 
+                 
+            </ul>
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+ 
+<!--Main Navigation-->
+ 
+</header>
+
     <div class="" id="makecomplaint" method="post">
 				<h4>Make a Complaint<hr /></h4>
 				
@@ -62,7 +126,6 @@
 					
 					<input type="submit"  class="btn btn-success" name="btn-success" style="width:auto ;padding:10px;padding-left:50px;padding-right:50px;"  value="Send">
 
-					<button type="submit"  class="btn btn-success" name="btn-success" style="width:auto ;padding:10px;padding-left:50px;padding-right:50px;"  value="Status"><br />
 				</form>
 			</div>
   
