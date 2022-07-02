@@ -169,35 +169,7 @@ while($row = mysqli_fetch_array($result))
                                     $sql7 = "SELECT * FROM tb_complaint INNER JOIN user ON tb_complaint.comp_user = user.username WHERE comp_type = '1' ";  //complaint pasal jalan raya
 $result7 = mysqli_query($conn, $sql7);
 while($row7 = mysqli_fetch_array($result7))
-{
-                                ?>
-                                <tr>
-                                    <td><?php echo $row7['comp_id']; ?></td>
-                                    <td><?php echo $row7['name']; ?></td>
-                                    <td><?php echo $row7['phone']; ?></td>
-                                    <td><?php echo $row7['comp_desc']; ?></td>
-                                    <td><?php 
-                                    $type = $row7['comp_type'];
-                                    $sql8 = "SELECT * FROM tb_complaint INNER JOIN tb_comptype ON tb_complaint.comp_type = tb_comptype.type_id WHERE tb_complaint.comp_type='$type'"; 
-                                    $result8 = mysqli_query($conn, $sql8);
-                                    $row8 = mysqli_fetch_array($result8);
-                                    echo $row8['type_desc']; ?></td>
-                                    <td><?php 
-                                    if($row7['comp_status']=='1')
-                                    {
-                                        echo "Pending";
-                                    }
-                                    else
-                                    {
-                                        echo "Completed";
-
-                                    }
-
-                                     ?></td>
-                                  
-                        
-                                </tr>
-                               <?php }  
+  
 
                                 }?> 
                                 <!-- tambahkan complaint pasal lampu isyarat untuk officer lampu-->
