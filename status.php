@@ -1,8 +1,9 @@
 <?php 
 
 include('config.php');
- $query = "SELECT * FROM usercomplaint WHERE fullname ='$fullname'";
-                    $results = mysqli_query($db, $query);
+ $fullname=$_SESSION['fullname'];
+ $sql = "SELECT * FROM usercomplaint WHERE fullname ='$fullname'";
+                    $result = mysqli_query($conn, $sql);
                     $row = mysqli_fetch_array($result);
 ?>
 <!DOCTYPE html>
@@ -96,6 +97,7 @@ li a:hover {
                     <div class="alert alert-info text-center" style="font-size: 15px;text-align: center;color: red;"><?php echo "Failed!"; ?></div> <?php } ?>
                     <div class="card-header card-header-text">
 
+                        <h4 class="card-title">Submitted Complaints by <?php echo$row9['fullname']; ?>
                     &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
 
                    
@@ -120,7 +122,88 @@ li a:hover {
                                     <th></th>
                                 </tr>
                             </thead>
-                           
+                            <tbody>
+                                <?php 
+
+                                if($usertype==2) //public
+                                {
+                                    $sql2 = "SELECT * FROM usercomplaint INNER JOIN users ON usercomplaint.fullname = users.fullname WHERE fullname='$fullname' "; 
+$result = mysqli_query($conn, $sql);
+while($row = mysqli_fetch_array($result))
+{
+                                ?>
+                                <tr>
+                                    <td><?php echo $row['id']; ?></td>
+                                    <td><?php echo $row['fullname']; ?></td>
+                                    <td><?php echo $row['email']; ?></td>
+                                    <td><?php echo $row['comCategory']; ?></td>
+                                    <td><?php echo $row['flightNumber']; ?></td>
+                                    <td><?php echo $row['fromm']; ?></td>
+                                    <td><?php echo $row['too']; ?></td>
+                                    <td><?php echo $row['comDescription']; ?></td>
+                                    <td><?php 
+                                    $type = $row['status'];
+                                    $sql = "SELECT * FROM statuss INNER JOIN usercomplaint ON usercomplaint.comp_type = tb_comptype.type_id WHERE tb_complaint.comp_type='$type'"; 
+                                    $result = mysqli_query($conn, $sql);
+                                    $row = mysqli_fetch_array($result);
+                                    echo $row3['type_desc']; ?></td>
+                                    <td><?php 
+                                    if($row['comp_status']=='1')
+                                    {
+                                        echo "Pending";
+                                    }
+                                    else
+                                    {
+                                        echo "Completed";
+
+                                    }
+
+                                     ?></td>
+                                  
+                        
+                                </tr>
+                               <?php }  
+                                }
+                                elseif($usertype==3)  //oficer jalan raya
+                                {
+                                    $sql7 = "SELECT * FROM tb_complaint INNER JOIN user ON tb_complaint.comp_user = user.username WHERE comp_type = '1' ";  //complaint pasal jalan raya
+$result7 = mysqli_query($conn, $sql7);
+while($row7 = mysqli_fetch_array($result7))
+{
+                                ?>
+                                <tr>
+                                    <td><?php echo $row7['comp_id']; ?></td>
+                                    <td><?php echo $row7['name']; ?></td>
+                                    <td><?php echo $row7['phone']; ?></td>
+                                    <td><?php echo $row7['comp_desc']; ?></td>
+                                    <td><?php 
+                                    $type = $row7['comp_type'];
+                                    $sql8 = "SELECT * FROM tb_complaint INNER JOIN tb_comptype ON tb_complaint.comp_type = tb_comptype.type_id WHERE tb_complaint.comp_type='$type'"; 
+                                    $result8 = mysqli_query($conn, $sql8);
+                                    $row8 = mysqli_fetch_array($result8);
+                                    echo $row8['type_desc']; ?></td>
+                                    <td><?php 
+                                    if($row7['comp_status']=='1')
+                                    {
+                                        echo "Pending";
+                                    }
+                                    else
+                                    {
+                                        echo "Completed";
+
+                                    }
+
+                                     ?></td>
+                                  
+                        
+                                </tr>
+                               <?php }  
+
+                                }?> 
+                                <!-- tambahkan complaint pasal lampu isyarat untuk officer lampu-->
+                    
+
+                            </tbody>
                         </table>
                     </div>
                      
