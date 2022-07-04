@@ -20,12 +20,22 @@
 						<option>Department Information Management</option>
 					</select>
 					<br /><br />
-					<span id="span2">Fullname:</span>
-					<input type="text" name="fullname" class="form-control in2" placeholder="Please Enter you fullname..."required><br />
+
+					<span id="span2">Officer Name:</span>
+					<?php  if (isset($_SESSION['officername'])) : ?>
+					 <input name="officername" value="<?php echo $_SESSION['department']['officername']; ?>" > </div>
+					
+					 <div>
+                    <?php endif ?>
+
+					<br /><br />
 					<span id="span2">Date:</span>
-					<input type="date" name="date" class="form-control in2" placeholder="Please Enter you fullname..."required><br />
-					<span id="span">Details description:</span>
-					<textarea name="detailDescription" class="form-control in1" placeholder="Feel free to write" style="height:200px;"required></textarea><br />
+					<?php 
+					$date = date('d-m-y h:i:s');
+					echo $date;
+					?>
+					
+					<br /><br />
 					
 					<input type="submit"  class="btn btn-success" name="btn-success" style="width:auto ;padding:10px;padding-left:50px;padding-right:50px;"  value="Send"><br />
 				</form>

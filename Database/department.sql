@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `department` (
   `id` int(11) NOT NULL,
   `departmentList` varchar(256) NOT NULL,
-  `fullname` varchar(50) NOT NULL,
+  `officername` varchar(50) NOT NULL,
   `detailDescription` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -38,7 +38,7 @@ CREATE TABLE `department` (
 -- Dumping data for table `department`
 --
 
-INSERT INTO `department` (`id`, `departmentList`, `fullname`, `detailDescription`) VALUES
+INSERT INTO `department` (`id`, `departmentList`, `officername`, `detailDescription`) VALUES
 (2, 'Department Finance', 'Liyana', 'Tolong bagi duit saya balik'),
 (7, 'Department Finance', 'nenna', 'wsded');
 
