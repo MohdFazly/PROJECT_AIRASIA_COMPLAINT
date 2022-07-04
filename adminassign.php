@@ -24,7 +24,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;  
+  background-color: #ff2819;  
 }
 
 li {
