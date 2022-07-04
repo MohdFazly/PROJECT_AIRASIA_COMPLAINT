@@ -1,5 +1,6 @@
 <?php 
 
+include('makecomplaint1.php');
 include('config.php');
  $fullname=$_SESSION['fullname'];
  $sql = "SELECT * FROM usercomplaint WHERE fullname ='$fullname'";
@@ -97,8 +98,7 @@ li a:hover {
                     <div class="alert alert-info text-center" style="font-size: 15px;text-align: center;color: red;"><?php echo "Failed!"; ?></div> <?php } ?>
                     <div class="card-header card-header-text">
 
-                        <h4 class="card-title">Submitted Complaints by <?php echo$row9['fullname']; ?>
-                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+                        
 
                    
                     
@@ -125,9 +125,8 @@ li a:hover {
                             <tbody>
                                 <?php 
 
-                                if($usertype==2) //public
                                 {
-                                    $sql2 = "SELECT * FROM usercomplaint INNER JOIN users ON usercomplaint.fullname = users.fullname WHERE fullname='$fullname' "; 
+                                    $sql = "SELECT * FROM usercomplaint INNER JOIN statuss ON usercomplaint.id = statuss.status_name "; 
 $result = mysqli_query($conn, $sql);
 while($row = mysqli_fetch_array($result))
 {
@@ -164,16 +163,12 @@ while($row = mysqli_fetch_array($result))
                                 </tr>
                                <?php }  
                                 }
-                                elseif($usertype==3)  //oficer jalan raya
-                                {
-                                    $sql7 = "SELECT * FROM tb_complaint INNER JOIN user ON tb_complaint.comp_user = user.username WHERE comp_type = '1' ";  //complaint pasal jalan raya
-$result7 = mysqli_query($conn, $sql7);
-while($row7 = mysqli_fetch_array($result7))
+                               
+                                
   
 
-                                }?> 
-                                <!-- tambahkan complaint pasal lampu isyarat untuk officer lampu-->
-                    
+                                ?> 
+                                
 
                             </tbody>
                         </table>

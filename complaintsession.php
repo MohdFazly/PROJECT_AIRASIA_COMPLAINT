@@ -5,9 +5,9 @@
 	}
 
 
-	if(isset($_SESSION['fullname']) != session_id())
+	if(isset($_SESSION['fuser']) != session_id())
 	{
-		header('Location: makecomplaint1.php');
+		header('Location: login.php');
 	}
 
 ?>

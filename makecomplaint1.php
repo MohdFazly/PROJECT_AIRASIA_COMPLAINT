@@ -11,10 +11,18 @@
 
 </head> 
 <body> 
-    <?php 
-    session_start(); 
 
-    ?> 
+<?php 
+
+if(!session_id())
+{
+session_start();
+}
+include('config.php');
+$fullname=$_SESSION['fullname'];
+
+
+?>
 	
 	<form class="form" action="dataUserComplaint.php" method="POST" style="width:100%;">
 	<br>
