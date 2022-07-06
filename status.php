@@ -1,11 +1,12 @@
-<?php 
-
-include('makecomplaint1.php');
-include('config.php');
- $fullname=$_SESSION['fullname'];
- $sql = "SELECT * FROM usercomplaint WHERE fullname ='$fullname'";
-                    $result = mysqli_query($conn, $sql);
-                    $row = mysqli_fetch_array($result);
+<?php    //STATUS COMPLAINT
+include ('complaintsession.php');
+if(!session_id())
+  {
+    session_start();
+  }
+require 'config.php';
+//$fullname = $_SESSION["full_name"];
+//$fullname =$_SESSION['fullname'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -126,38 +127,21 @@ li a:hover {
                                 <?php 
 
                                 {
-                                    $sql = "SELECT * FROM usercomplaint INNER JOIN statuss ON usercomplaint.id = statuss.status_name "; 
-$result = mysqli_query($conn, $sql);
-while($row = mysqli_fetch_array($result))
+                                    $sql2 = "SELECT * FROM usercomplaint "; 
+$result2 = mysqli_query($conn, $sql2);
+while($row2 = mysqli_fetch_array($result2))
 {
                                 ?>
                                 <tr>
-                                    <td><?php echo $row['id']; ?></td>
-                                    <td><?php echo $row['fullname']; ?></td>
-                                    <td><?php echo $row['email']; ?></td>
-                                    <td><?php echo $row['comCategory']; ?></td>
-                                    <td><?php echo $row['flightNumber']; ?></td>
-                                    <td><?php echo $row['fromm']; ?></td>
-                                    <td><?php echo $row['too']; ?></td>
-                                    <td><?php echo $row['comDescription']; ?></td>
-                                    <td><?php 
-                                    $type = $row['status'];
-                                    $sql = "SELECT * FROM statuss INNER JOIN usercomplaint ON usercomplaint.comp_type = tb_comptype.type_id WHERE tb_complaint.comp_type='$type'"; 
-                                    $result = mysqli_query($conn, $sql);
-                                    $row = mysqli_fetch_array($result);
-                                    echo $row3['type_desc']; ?></td>
-                                    <td><?php 
-                                    if($row['comp_status']=='1')
-                                    {
-                                        echo "Pending";
-                                    }
-                                    else
-                                    {
-                                        echo "Completed";
-
-                                    }
-
-                                     ?></td>
+                                    <td><?php echo $row2['id']; ?></td>
+                                    <td><?php echo $row2['fullname']; ?></td>
+                                    <td><?php echo $row2['email']; ?></td>
+                                    <td><?php echo $row2['comCategory']; ?></td>
+                                    <td><?php echo $row2['flightNumber']; ?></td>
+                                    <td><?php echo $row2['fromm']; ?></td>
+                                    <td><?php echo $row2['too']; ?></td>
+                                    <td><?php echo $row2['comDescription']; ?></td>
+                                    <td><?php echo "Pending" ?></td>
                                   
                         
                                 </tr>
