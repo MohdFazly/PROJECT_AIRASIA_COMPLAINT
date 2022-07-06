@@ -19,21 +19,6 @@
 						<option>Department Lanside Operation </option>
 						<option>Department Information Management</option>
 					</select>
-					<br /><br />
-
-					<span id="span2">Officer Name:</span>
-					<?php  if (isset($_SESSION['officername'])) : ?>
-					 <input name="officername" value="<?php echo $_SESSION['department']['officername']; ?>" > </div>
-					
-					 <div>
-                    <?php endif ?>
-
-					<br /><br />
-					<span id="span2">Date:</span>
-					<?php 
-					$date = date('d-m-y h:i:s');
-					echo $date;
-					?>
 					
 					<br /><br />
 					

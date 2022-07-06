@@ -8,6 +8,17 @@ require 'config.php';
 //$fullname = $_SESSION["full_name"];
 //$fullname =$_SESSION['fullname'];
 ?>
+
+<?php 
+
+include('config.php');
+ $fullname=$_SESSION['fullname'];
+ $sql = "SELECT * FROM usercomplaint WHERE fullname ='$fullname'";
+                    $result = mysqli_query($conn, $sql);
+                    $row = mysqli_fetch_array($result);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

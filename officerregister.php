@@ -21,13 +21,20 @@
             <input type="text" name="fullname" value="<?php echo $fullname; ?>">
         </div>
         <div class="input-group">
+            <label>Hp Number:</label>
+            <input type="hpnumber" name="hpnumber">
+        </div>
+        <div class="input-group">
             <label>Email:</label>
             <input type="email" name="email" value="<?php echo $email; ?>">
         </div>
-        <div class="input-group">
-            <label>Address:</label>
-            <input type="address" name="address" value="<?php echo $address; ?>">
-        </div>
+        <form class="form" action="datadepartment.php" method="POST" style="width:100%;">
+					<span id="span2">Department List:</span>
+					<select id="departmentList" name="departmentList" style="width:50%;border-radius:12px;height:37px;"required> 
+						<option> Finance </option>
+						<option> Lanside Operation </option>
+						<option> Baggage </option>
+					</select>
         <div class="input-group">
             <label>Enter Password:</label>
             <input type="password" name="password">
