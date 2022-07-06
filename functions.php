@@ -27,8 +27,8 @@ function register(){
 	$email       =  e($_POST['email']);
 	$address       =  e($_POST['address']);
 	$date       =  e($_POST['date']);
-	$password_1  =  e($_POST['password_1']);
-	$password_2  =  e($_POST['password_2']);
+	$password_1  =  e($_POST['password']);
+	
 
 
 	// register user if there are no errors in the form
@@ -37,8 +37,8 @@ function register(){
 
 		if (isset($_POST['user_type'])) {
 			$user_type = e($_POST['user_type']);
-			$query = "INSERT INTO users (fullname, email, address, date, user_type, password) 
-					  VALUES('$fullname', '$email','$address', '$date', '$user_type', '$password')";
+			$query = "INSERT INTO users (fullname, email, address, date, password) 
+					  VALUES('$fullname', '$email','$address', '$date','$password')";
 			mysqli_query($db, $query);
 			$_SESSION['success']  = "New user successfully created!!";
 			header('location: home.php');
@@ -116,24 +116,14 @@ function login(){
 		$results = mysqli_query($db, $query);
 
 		if (mysqli_num_rows($results) == 1) { // user found
-			// check if user is admin or user
-			$logged_in_user = mysqli_fetch_assoc($results);
-			if ($logged_in_user['user_type'] == 'admin') {
-
-				$_SESSION['user'] = $logged_in_user;
-				$_SESSION['success']  = "You are now logged in";
-				header('location: admin/home.php');		  
-			}else{
-				$_SESSION['user'] = $logged_in_user;
-				$_SESSION['success']  = "You are now logged in";
-
-				header('location: index.php');
+		
+			header ('location: index.php');
 			}
 		}else {
 			array_push($errors, "Wrong email or password combination");
 		}
 	}
-}
+
 
 
 // ...
