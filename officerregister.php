@@ -30,7 +30,7 @@
         </div>
         <form class="form" action="datadepartment.php" method="POST" style="width:100%;">
 					<span id="span2">Department List:</span>
-					<select id="departmentList" name="departmentList" style="width:30%;border-radius:12px;height:37px;"required> 
+					<select id="departmentList" name="departmentList" style="width:50%;border-radius:12px;height:37px;"required> 
 						<option> Finance </option>
 						<option> Lanside Operation </option>
 						<option> Baggage </option>
