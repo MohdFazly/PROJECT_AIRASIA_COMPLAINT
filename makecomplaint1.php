@@ -19,7 +19,8 @@ if(!session_id())
 session_start();
 }
 include('config.php');
-$fullname=$_SESSION['fullname'];
+//$fullname = $_SESSION["full_name"];
+//$fullname =$_SESSION['fullname'];
 
 
 ?>
@@ -113,11 +114,10 @@ li a:hover {
 			
 					<span id="span2">Detail:</span>
 					<select id="comCategory" name="comCategory" style="width:30%;border-radius:12px;height:37px;"required> 
-						<option>Other</option>
+						<option></option>
 						<option>Refund</option>
 						<option>Reschedule</option>
-                        <option>Food</option>
-						<option>Mishandled Baggage</option>
+						<option>Luggage</option>
 					</select>
 
 					<br /><br /><span id="span2" style="margin-left:20px;">Flight number:</span> 
