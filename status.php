@@ -1,6 +1,5 @@
 <?php 
 
-include('makecomplaint1.php');
 include('config.php');
  $fullname=$_SESSION['fullname'];
  $sql = "SELECT * FROM usercomplaint WHERE fullname ='$fullname'";
