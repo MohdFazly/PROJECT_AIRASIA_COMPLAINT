@@ -162,7 +162,7 @@ li a:hover {
                                     $resultpic5 = mysqli_query($conn, $sqlpic5);
                                     ?> 
                                     
-                                    <form method="POST" action="assignofficer.php">
+                                    <form method="POST" action="officerassign.php">
                                     
                                         <input type="hidden" name="complaint_id" value="<?php echo $row['id']; ?>">
                                         <select class="form-select" id="fofficer" class="form-select" name="fofficer" required="">
