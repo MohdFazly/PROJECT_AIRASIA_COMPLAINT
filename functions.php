@@ -27,7 +27,7 @@ function register(){
 	$email       =  e($_POST['email']);
 	$address       =  e($_POST['address']);
 	$date       =  e($_POST['date']);
-	$password_1  =  e($_POST['password']);
+	$password  =  e($_POST['password']);
 	
 
 
@@ -43,7 +43,7 @@ function register(){
 			$_SESSION['success']  = "New user successfully created!!";
 			header('location: home.php');
 		}else{
-			$query = "INSERT INTO users (fullname, email, address, date, user_type, password) 
+			$query = "INSERT INTO users (fullname, email, address, date, password) 
 					  VALUES('$fullname', '$email', $address, $date, 'user', '$password')";
 			mysqli_query($db, $query);
 
