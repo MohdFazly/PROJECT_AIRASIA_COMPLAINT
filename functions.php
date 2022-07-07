@@ -89,6 +89,7 @@ function display_error() {
 
 // call the login() function if register_btn is clicked
 if (isset($_POST['login_btn'])) {
+	//echo "haiii";
 	login();
 }
 
@@ -113,10 +114,13 @@ function login(){
 		$password = md5($password);
 
 		$query = "SELECT * FROM users WHERE email='$email' AND password='$password' LIMIT 1";
+		//echo $querys;
 		$results = mysqli_query($db, $query);
 
 		if (mysqli_num_rows($results) == 1) { // user found
-		
+			$_SESSION['user_mail'] = $email;
+			$user = mysqli_fetch_assoc($results);
+			$_SESSION['user'] = $user; 
 			header ('location: index.php');
 			}
 		}else {
@@ -130,6 +134,15 @@ function login(){
 function isAdmin()
 {
 	if (isset($_SESSION['user']) && $_SESSION['user']['user_type'] == 'admin' ) {
+		return true;
+	}else{
+		return false;
+	}
+}
+
+function isLoggedIn()
+{
+	if (isset($_SESSION['user']) ) {
 		return true;
 	}else{
 		return false;

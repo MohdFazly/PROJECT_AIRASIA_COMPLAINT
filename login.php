@@ -1,4 +1,29 @@
-<?php include('functions.php') ?>
+<?php include('functions.php');
+// session_start();
+// include_once 'config.php';
+// if (isset($_POST['login_btn'])) {
+	
+
+// 	$email = $_POST['email'];
+// 	$password = $_POST['password'];
+
+// 	$password = md5($password);
+
+// 	$query = "SELECT * FROM users WHERE email='$email' AND password='$password' LIMIT 1";
+// 		echo $querys;
+// 		$results = mysqli_query($conn, $query);
+
+// 		if (mysqli_num_rows($results) == 1) { // user found
+// 			$_SESSION['user_mail'] = $email;
+// 			header ('location: status.php');
+		
+// 		}else {
+			
+// 			header ('location: login.php?error=wrong email password');
+// 		}
+// }
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,20 +59,20 @@
 	<div class="header">
 		<h2>Login</h2>
 	</div>
-	<form method="post" action="login.php">
+	<form method="post" action="" >
 
-		<?php echo display_error(); ?>
+		<?php //echo display_error(); ?>
 
 		<div class="input-group">
 			<label>Email</label>
-			<input type="text" name="email" required>
+			<input type="email" name="email" required>
 		</div>
 		<div class="input-group">
 			<label>Password</label>
 			<input type="password" name="password"required>
 		</div>
-		<div class="w3-container">
-		<button class="w3-button w3-red w3-round-large" name="login_btn" >Login</button>
+		<div class="input-group">
+		<input type="submit" class="" name="login_btn" value="Log in" >
 		</div>
 		<p>
 			Not yet a member? <a href="register.php">Sign up</a>

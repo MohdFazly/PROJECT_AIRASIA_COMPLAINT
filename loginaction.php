@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // return user array from their id
 function getUserById($id){
 	global $db;

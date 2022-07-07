@@ -2,6 +2,7 @@
 if(!session_id())
   {
     session_start();
+    $user_mail = $_SESSION["user_mail"];
   }
 require 'config.php';
 //$fullname = $_SESSION["full_name"];
@@ -127,7 +128,7 @@ li a:hover {
                                 <?php 
 
                                 {
-                                    $sql2 = "SELECT * FROM usercomplaint "; 
+                                    $sql2 = "SELECT * FROM usercomplaint WHERE email='$user_mail'"; 
 $result2 = mysqli_query($conn, $sql2);
 while($row2 = mysqli_fetch_array($result2))
 {
