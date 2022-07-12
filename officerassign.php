@@ -15,8 +15,6 @@ values ('$_POST[id]','$_POST[datetime]','$_POST[comCategory]','$_POST[flightNumb
  
   
     echo "<script> alert('Officer assigned! ');window.location.href = 'adminassign.php'</script>"; 
-
-
  
  
 ?>

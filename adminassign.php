@@ -143,7 +143,7 @@ li a:hover {
                              while($row = mysqli_fetch_assoc($result))
                                 {
                                 ?>
-                                <form method="POST" action="officerassign.php">
+                                <form method="POST" action="adminAssignAction.php">
                                 <tr>
                                     <td><?php echo $row['id']; ?></td>
                                     <td><?php echo $row['fullname']; ?></td>
