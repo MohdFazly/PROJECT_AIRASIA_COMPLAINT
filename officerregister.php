@@ -35,9 +35,11 @@
 						<option> Lanside Operation </option>
 						<option> Baggage </option>
 					</select>
+    
+        
         <div class="input-group">
             <label>Enter Password:</label>
-            <input type="password" name="password">
+            <input type="passwordd" name="passwordd">
         </div>
         
         <div class="input-group">

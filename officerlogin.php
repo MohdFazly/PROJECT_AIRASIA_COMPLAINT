@@ -35,7 +35,7 @@
 	<div class="header">
 		<h2>Login: Officer</h2>
 	</div>
-	<form method="post" action="officerloginaction.php">
+	<form method="post" action="home_officer.php">
 
 		<?php include('errors.php'); ?>
 
