@@ -123,8 +123,9 @@ li a:hover {
                             <thead>
                                 <tr>
                                     <th scope="col">Complaint ID</th>
+                                    <th scope="col">Fullname</th>
                                     <th scope="col">Date</th>
-                                    <th scope="col">category</th>
+                                    <th scope="col">Category</th>
                                     <th scope="col">Flight Number</th>
                                     <th scope="col">From</th>
                                     <th scope="col">To</th>                    
@@ -145,6 +146,7 @@ li a:hover {
                                 <form method="POST" action="officerassign.php">
                                 <tr>
                                     <td><?php echo $row['id']; ?></td>
+                                    <td><?php echo $row['fullname']; ?></td>
                                     <td><?php echo $row['datetime']; ?></td>
                                     <td><?php $category = $row['comCategory']; echo $category; ?></td>
                                     <td><?php echo $row['flightNumber']; ?></td>
@@ -165,7 +167,9 @@ li a:hover {
                                     
                                         <input type="hidden" name="complaint_id" value="<?php echo $row['id']; ?>">
                                         <select class="form-select" id="fullname" class="form-select" name="fullname" required="">
-                                         
+                                        <option> Hafizah </option>
+                                         <option> Mardiana </option>
+                                          <option> Khairun </option> 
                                     </select>
                               
                                  <td>

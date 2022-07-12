@@ -13,7 +13,7 @@
 </head>
 
 <ul>
-  <li><a class="active" href="adminassign.php">Home</a></li>
+  <li><a class="active" href="adminassign.php">Back</a></li>
 </ul>
 </ul>
         </div>
@@ -61,5 +61,3 @@
             <button type="submit" class="btn" name="reg_user"> Register </button>
         </div>
  
-<p>
-         Already having an account? <a href="officerlogin.php"> Login Here! </a> </p>
