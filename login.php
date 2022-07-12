@@ -8,6 +8,8 @@
 // 	$password = $_POST['password'];
 
 
+// 	$password = md5($password);
+
 
 // 	$query = "SELECT * FROM users WHERE email='$email' AND password='$password' LIMIT 1";
 // 		echo $querys;
