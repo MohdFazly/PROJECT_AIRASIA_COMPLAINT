@@ -120,6 +120,7 @@ li a:hover {
                                     <th scope="col">To</th>
                                     <th scope="col">Complaint Description</th>
                                     <th scope="col">Status</th>
+                                    <th scope="col">Action</th>
                                     
                                     <th></th>
                                 </tr>
@@ -143,8 +144,7 @@ while($row2 = mysqli_fetch_array($result2))
                                     <td><?php echo $row2['too']; ?></td>
                                     <td><?php echo $row2['comDescription']; ?></td>
                                     <td><?php echo "Pending" ?></td>
-                                  
-                        
+                                    <td><button class="btn btn-danger btn-sm remove">Delete</button></td>
                                 </tr>
                                <?php }  
                                 }
@@ -171,4 +171,31 @@ while($row2 = mysqli_fetch_array($result2))
 <!--Main layout-->
 </body>
 
+<script type="text/javascript">
+    $(".remove").click(function(){
+        var id = $(this).parents("tr").attr("id");
+
+
+        if(confirm('Are you sure to remove this record ?'))
+        {
+            $.ajax({
+               url: '/delete.php',
+               type: 'GET',
+               data: {id: id},
+               error: function() {
+                  alert('Something is wrong');
+               },
+               success: function(data) {
+                    $("#"+id).remove();
+                    alert("Record removed successfully");  
+               }
+            });
+        }
+    });
+
+
+</script>
+
 </html>
+
+
