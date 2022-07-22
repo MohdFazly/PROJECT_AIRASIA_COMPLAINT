@@ -152,12 +152,8 @@ li a:hover {
                                     <td><?php echo $row['flightNumber']; ?></td>
                                     <td><?php echo $row['fromm']; ?></td>
                                     <td><?php echo $row['too']; ?></td>
-                                    <td><?php 
-                                   
-                                    echo $row['status'];
-                                     ?></td> 
-                                     <td>
-                                     <?php
+                                    <td><?php echo $row['status']; ?></td> 
+                                    <td><?php
 
                                     $sqlpic5="SELECT of.fullname, of.id FROM officer of join categorydepartment cd on of.department_id = cd.department_id WHERE cd.category = '$category'" ;
                                     //echo $sqlpic5;

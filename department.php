@@ -1,14 +1,14 @@
-<?php    //STATUS COMPLAINT
+<?php    //HOMEPAGE ADMIN
+
 if(!session_id())
   {
     session_start();
-    $user_mail = $_SESSION["user_mail"];
+    $officer_fullname = $_SESSION["officer_fullname"];
   }
 require 'config.php';
 //$fullname = $_SESSION["full_name"];
 //$fullname =$_SESSION['fullname'];
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +19,9 @@ require 'config.php';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css" />
-    <title>Make Complaint</title>
+    <title>DEPARTMENT HOMEPAGE</title>
+
+     
 </head>
 <style>
 ul {
@@ -27,7 +29,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #FF2819;  
+  background-color: #ff2819;  
 }
 
 li {
@@ -58,10 +60,10 @@ li a:hover {
         <!-- Navbar -->
      
     
-            <!-- GAMBARRRR
-            <li><a href="../student.php">
+            <!--
+            <li><a href="image.png/homepage.php">
                 <img src=""   />
-            </a>      </li>    -->                                  
+            </a>      </li>          -->                          
             <!-- Search form -->
             
     
@@ -69,8 +71,8 @@ li a:hover {
            
             <!-- Notification dropdown -->
                 <!-- Avatar -->
-<ul>
-  <li><a class="active" href="index.php">Home</a></li>
+                <ul>
+  <li><a class="active" href="department.php">Home</a></li>
   <li><a href="officerlogin.php">Logout</a></li>
 </ul>
                  
@@ -82,6 +84,9 @@ li a:hover {
  
 <!--Main Navigation-->
  
+   
+    
+        
 </header>
 <!--Main Navigation-->
 
@@ -99,61 +104,77 @@ li a:hover {
                     <div class="alert alert-info text-center" style="font-size: 15px;text-align: center;color: red;"><?php echo "Failed!"; ?></div> <?php } ?>
                     <div class="card-header card-header-text">
 
-                        
+                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
 
-                   
                     
+
+                    <!--ASSIGN OFFICERRRRRRRR
                     
+
+                    $sqlpic = "SELECT * FROM user ORDER BY role_id  ASC";
+                    $result = mysqli_query($conn, $sqlpic);
+                    while($row = mysqli_fetch_array($result)) {
+                        if ($row["role_id"] == "3"){
+                            echo "<option value=\"{$row['role_id']}\" selected=\"selected\">{$row['role_name']}</option>";
+                    }
+                        else {
+                            echo "<option value=\"{$row['role_id']}\">{$row['role_name']}</option>";
+                        }       }
+                    ?> -->                
                 </div>
                     <div class="card-content table-responsive p-2">
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th scope="col">Complaint ID</th>
-                                    <th scope="col">FullName</th>
-                                   <!-- <th scope="col"></th> submitted date - tambah dalam tb_complaint -->
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Complaint Category</th>
+                                    <th scope="col">Fullname</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Category</th>
                                     <th scope="col">Flight Number</th>
                                     <th scope="col">From</th>
-                                    <th scope="col">To</th>
-                                    <th scope="col">Complaint Description</th>
+                                    <th scope="col">To</th>                                       
                                     <th scope="col">Status</th>
-                                    <th scope="col">Action</th>
-                                    
-                                    <th></th>
+                                    <th scope="col">Officer Name</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php 
 
+                                
+                             $sql2 = "SELECT * FROM usercomplaint WHERE officer_fullname='$officer_fullname'"; 
+                             $result2 = mysqli_query($conn, $sql2);
+                                   
+                             while($row2 = mysqli_fetch_assoc($result2))
                                 {
-                                    $sql2 = "SELECT * FROM officerdepartment WHERE email='$user_mail'"; 
-$result2 = mysqli_query($conn, $sql2);
-while($row2 = mysqli_fetch_array($result2))
-{
                                 ?>
+                                <form method="POST" action="adminAssignAction.php">
                                 <tr>
-                                    <td><?php echo $row2['id']; ?></td>
                                     <td><?php echo $row2['fullname']; ?></td>
-                                    <td><?php echo $row2['email']; ?></td>
-                                    <td><?php echo $row2['comCategory']; ?></td>
+                                    <td><?php echo $row2['datetime']; ?></td>
+                                    <td><?php $category = $row2['comCategory']; echo $category; ?></td>
                                     <td><?php echo $row2['flightNumber']; ?></td>
                                     <td><?php echo $row2['fromm']; ?></td>
                                     <td><?php echo $row2['too']; ?></td>
-                                    <td><?php echo $row2['comDescription']; ?></td>
-                                    <td><?php echo "Pending" ?></td>
-                                    <td><button class=" btn-danger btn-sm remove">Delete</button></td>
-                                </tr>
-                               <?php }  
-                                }
-                               
+                                    <td><?php 
                                 
-  
+								   ?> 
+								   
+									   <input type="hidden" name="id" value="<?php echo $row2['id']; ?>">
+									   <select class="form-select" id="status" value="status" name="status" required>
+									   <option> STILL PENDING </option>
+									   <option> COMPLETED </option>
+								   </select>
+								   
+                                    </td> 
+                                     <td> 
+                                    
+                              
+                                 <td>
+                                 <input type="submit" class="btn btn-outline-success" value="Assign"></input> </td>
+                                 
 
-                                ?> 
-                                
-
+                                 </form>
+                                </td>                    
+                                </tr> <?php } ?>
                             </tbody>
                         </table>
                     </div>
@@ -173,3 +194,4 @@ while($row2 = mysqli_fetch_array($result2))
 </html>
 
 
+                            
