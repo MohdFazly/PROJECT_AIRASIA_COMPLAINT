@@ -24,12 +24,12 @@ function display_error() {
     // LOGIN Officer
 if (isset($_POST['login_officer'])) {
     $email = mysqli_real_escape_string($db, $_POST['email']);
-    $password = mysqli_real_escape_string($db, $_POST['password']);
+    $password = mysqli_real_escape_string($db, $_POST['passwordd']);
   
   
     if (count($errors) == 0) {
         
-        $query = "SELECT * FROM officer WHERE email='$email' AND password='$password'";
+        $query = "SELECT * FROM officer WHERE email='$email' AND passwordd='$password'";
         $results = mysqli_query($db, $query);
         if (mysqli_num_rows($results) == 1) {
           $_SESSION[''] = $email;

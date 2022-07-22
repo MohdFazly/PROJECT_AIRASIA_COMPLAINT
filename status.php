@@ -144,7 +144,7 @@ while($row2 = mysqli_fetch_array($result2))
                                     <td><?php echo $row2['too']; ?></td>
                                     <td><?php echo $row2['comDescription']; ?></td>
                                     <td><?php echo "Pending" ?></td>
-                                    <td><button class="btn btn-danger btn-sm remove">Delete</button></td>
+                                    <td><button class=" btn-danger btn-sm remove">Delete</button></td>
                                 </tr>
                                <?php }  
                                 }
@@ -179,7 +179,7 @@ while($row2 = mysqli_fetch_array($result2))
         if(confirm('Are you sure to remove this record ?'))
         {
             $.ajax({
-               url: '/delete.php',
+               url: 'delete.php',
                type: 'GET',
                data: {id: id},
                error: function() {

@@ -45,7 +45,7 @@
 		</div>
 		<div class="input-group">
 			<label>Password</label>
-			<input type="password" name="password"required>
+			<input type="password" name="passwordd"required>
 		</div>
 		<div class="w3-container">
 		<button class="w3-button w3-red w3-round-large" name="login_officer" >Login</button>
