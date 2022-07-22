@@ -128,7 +128,7 @@ li a:hover {
                                     <th scope="col">Category</th>
                                     <th scope="col">Flight Number</th>
                                     <th scope="col">From</th>
-                                    <th scope="col">To</th>                    
+                                    <th scope="col">To</th>                                       
                                     <th scope="col">Status</th>
                                     <th scope="col">Officer Name</th>
                                 </tr>
@@ -165,11 +165,11 @@ li a:hover {
                                     ?> 
                                     
                                     
-                                        <input type="hidden" name="complaint_id" value="<?php echo $row['id']; ?>">
-                                        <select class="form-select" id="fullname" class="form-select" name="fullname" required="">
+                                        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                                        <select class="form-select" id="officer_fullname" value="officer_fullname" name="officer_fullname" required>
                                         <option> Hafizah </option>
-                                         <option> Mardiana </option>
-                                          <option> Khairun </option> 
+                                        <option> Mardiana </option>
+                                        <option> Khairun </option> 
                                     </select>
                               
                                  <td>
