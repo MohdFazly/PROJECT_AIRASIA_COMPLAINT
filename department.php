@@ -1,10 +1,6 @@
 <?php    //HOMEPAGE ADMIN
 
-if(!session_id())
-  {
-    session_start();
-    $officer_fullname = $_SESSION["officer_fullname"];
-  }
+
 require 'config.php';
 //$fullname = $_SESSION["full_name"];
 //$fullname =$_SESSION['fullname'];
@@ -140,7 +136,7 @@ li a:hover {
                                 <?php 
 
                                 
-                             $sql2 = "SELECT * FROM usercomplaint WHERE officer_fullname='$officer_fullname'"; 
+                             $sql2 = "SELECT * FROM usercomplaint"; 
                              $result2 = mysqli_query($conn, $sql2);
                                    
                              while($row2 = mysqli_fetch_assoc($result2))
@@ -169,7 +165,7 @@ li a:hover {
                                     
                               
                                  <td>
-                                 <input type="submit" class="btn btn-outline-success" value="Assign"></input> </td>
+                                 <input type="submit" class="btn-outline-success" value="Assign"></input> </td>
                                  
 
                                  </form>

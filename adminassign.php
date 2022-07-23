@@ -162,6 +162,7 @@ li a:hover {
                                     
                                     
                                         <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                                        <input type="hidden" name="officer_id" value="<?php echo $row['officer_id']; ?>">
                                         <select class="form-select" id="officer_fullname" value="officer_fullname" name="officer_fullname" required>
                                         <option> Hafizah </option>
                                         <option> Mardiana </option>
@@ -169,7 +170,7 @@ li a:hover {
                                     </select>
                               
                                  <td>
-                                 <input type="submit" class="btn btn-outline-success" value="Assign"></input> </td>
+                                 <input type="submit" class="btn-outline-success" value="Assign"></input> </td>
                                  
 
                                  </form>
