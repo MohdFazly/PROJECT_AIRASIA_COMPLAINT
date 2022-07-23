@@ -40,8 +40,8 @@
 		<?php include('errors.php'); ?>
 
 		<div class="input-group">
-			<label>Email</label>
-			<input type="officer_fullname" name="email" required>
+			<label>Fullname</label>
+			<input type="officer_fullname" name="officer_fullname" required>
 		</div>
 		<div class="input-group">
 			<label>Password</label>

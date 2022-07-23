@@ -1,7 +1,10 @@
 <?php    //HOMEPAGE ADMIN
-
-
+if(!session_id())
+{
+  session_start();
+}
 require 'config.php';
+$officer_fullname = $_SESSION["officer_fullname"];
 //$fullname = $_SESSION["full_name"];
 //$fullname =$_SESSION['fullname'];
 ?>
@@ -99,6 +102,7 @@ li a:hover {
                     <?php if (isset($_GET['fail'])) { ?>  <br>   
                     <div class="alert alert-info text-center" style="font-size: 15px;text-align: center;color: red;"><?php echo "Failed!"; ?></div> <?php } ?>
                     <div class="card-header card-header-text">
+                    <h4 class="card-title"> Managed By: <?php echo $_SESSION['user']['officer_fullname']; ?>
 
                     &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
 
@@ -136,7 +140,7 @@ li a:hover {
                                 <?php 
 
                                 
-                             $sql2 = "SELECT * FROM usercomplaint"; 
+                             $sql2 = "SELECT * FROM usercomplaint WHERE officer_fullname='$officer_fullname'"; 
                              $result2 = mysqli_query($conn, $sql2);
                                    
                              while($row2 = mysqli_fetch_assoc($result2))

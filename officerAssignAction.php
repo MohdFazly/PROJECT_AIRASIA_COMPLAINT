@@ -13,6 +13,6 @@ if (!mysqli_query($conn,$sql)){
   die ('Error: ' .mysqli_error($conn));
 }
 echo "<script
-type='text/jscript'>alert('Complaints have been submitted to officer ')</script>";
+type='text/jscript'>alert('Update complaint have been submitted ')</script>";
 header('refresh:1 url=department.php');
 ?>
