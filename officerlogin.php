@@ -41,7 +41,7 @@
 
 		<div class="input-group">
 			<label>Email</label>
-			<input type="email" name="email" required>
+			<input type="officer_fullname" name="email" required>
 		</div>
 		<div class="input-group">
 			<label>Password</label>
