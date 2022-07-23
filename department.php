@@ -106,21 +106,7 @@ li a:hover {
 
                     &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
 
-                    
-
-                    <!--ASSIGN OFFICERRRRRRRR
-                    
-
-                    $sqlpic = "SELECT * FROM user ORDER BY role_id  ASC";
-                    $result = mysqli_query($conn, $sqlpic);
-                    while($row = mysqli_fetch_array($result)) {
-                        if ($row["role_id"] == "3"){
-                            echo "<option value=\"{$row['role_id']}\" selected=\"selected\">{$row['role_name']}</option>";
-                    }
-                        else {
-                            echo "<option value=\"{$row['role_id']}\">{$row['role_name']}</option>";
-                        }       }
-                    ?> -->                
+                                    
                 </div>
                     <div class="card-content table-responsive p-2">
                         <table class="table">
@@ -155,20 +141,16 @@ li a:hover {
                                     <td><?php echo $row2['fromm']; ?></td>
                                     <td><?php echo $row2['too']; ?></td>
                                     <td><?php 
-                                
 								   ?> 
 								   
 									   <input type="hidden" name="id" value="<?php echo $row2['id']; ?>">
 									   <select class="form-select" id="status" value="status" name="status" required>
-									   <option> STILL PENDING </option>
+									   <option> PROGGRESS </option>
 									   <option> COMPLETED </option>
 								   </select>
 								   
-                                    </td> 
-                                     <td> 
-                                    
-                              
-                                 <td>
+                                   <td><?php 
+								   ?>  <input type="text" id="update_staff" name="update_staff" placeholder="Update feedback.."required><br /><br /> <td>
                                  <input type="submit" class="btn btn-outline-success" value="Update"></input> </td>
                                  
 

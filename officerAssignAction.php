@@ -7,8 +7,9 @@
 include('config.php');
 $id= ($_POST['id']);
 $status= ($_POST['status']);
+$up_staff= ($_POST['update_staff']);
 
-$sql ="UPDATE usercomplaint SET status='$status' WHERE id='$id' ";
+$sql ="UPDATE usercomplaint SET status='$status' , update_staff='$up_staff' WHERE id='$id' ";
 if (!mysqli_query($conn,$sql)){
   die ('Error: ' .mysqli_error($conn));
 }
