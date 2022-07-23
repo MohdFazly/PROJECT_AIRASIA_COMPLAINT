@@ -129,7 +129,7 @@ li a:hover {
                                     <th scope="col">From</th>
                                     <th scope="col">To</th>                                       
                                     <th scope="col">Status</th>
-                                    <th scope="col">Officer Name</th>
+                                    <th scope="col">Update from Airasia</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -142,7 +142,7 @@ li a:hover {
                              while($row2 = mysqli_fetch_assoc($result2))
                                 {
                                 ?>
-                                <form method="POST" action="adminAssignAction.php">
+                                <form method="POST" action="officerAssignAction.php">
                                 <tr>
                                     <td><?php echo $row2['fullname']; ?></td>
                                     <td><?php echo $row2['datetime']; ?></td>
@@ -165,7 +165,7 @@ li a:hover {
                                     
                               
                                  <td>
-                                 <input type="submit" class="btn-outline-success" value="Assign"></input> </td>
+                                 <input type="submit" class="btn btn-outline-success" value="Update"></input> </td>
                                  
 
                                  </form>

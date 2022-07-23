@@ -170,7 +170,7 @@ li a:hover {
                                     </select>
                               
                                  <td>
-                                 <input type="submit" class="btn-outline-success" value="Assign"></input> </td>
+                                 <input type="submit" class="btn btn-outline-success" value="Assign"></input> </td>
                                  
 
                                  </form>
