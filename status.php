@@ -134,6 +134,7 @@ $result2 = mysqli_query($conn, $sql2);
 while($row2 = mysqli_fetch_array($result2))
 {
                                 ?>
+                                <form method="POST" action="userDeleteAction.php">
                                 <tr>
                                     <td><?php echo $row2['id']; ?></td>
                                     <td><?php echo $row2['fullname']; ?></td>
@@ -144,7 +145,11 @@ while($row2 = mysqli_fetch_array($result2))
                                     <td><?php echo $row2['too']; ?></td>
                                     <td><?php echo $row2['comDescription']; ?></td>
                                     <td><?php echo $row2['status']; ?></td>
-                                    <td><button class=" btn-danger btn-sm remove">Delete</button></td>
+                                    <input type="hidden" name="id" value="<?php echo $row2['id']; ?>">
+                                    <td>
+                                    
+                                    <button type="submit" id="delete" name="deleted" class=" btn-danger btn-sm">Delete</button></td>
+                                    
                                 </tr>
                                <?php }  
                                 }
@@ -170,31 +175,6 @@ while($row2 = mysqli_fetch_array($result2))
 
 <!--Main layout-->
 </body>
-
-<script type="text/javascript">
-    $(".remove").click(function(){
-        var id = $(this).parents("tr").attr("id");
-
-
-        if(confirm('Are you sure to remove this record ?'))
-        {
-            $.ajax({
-               url: 'delete.php',
-               type: 'GET',
-               data: {id: id},
-               error: function() {
-                  alert('Something is wrong');
-               },
-               success: function(data) {
-                    $("#"+id).remove();
-                    alert("Record removed successfully");  
-               }
-            });
-        }
-    });
-
-
-</script>
 
 </html>
 

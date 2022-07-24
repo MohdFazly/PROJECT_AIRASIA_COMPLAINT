@@ -15,4 +15,5 @@ if (!mysqli_query($conn,$sql)){
 echo "<script
 type='text/jscript'>alert('Complaints have been submitted to officer ')</script>";
 header('refresh:1 url=adminassign.php');
+
 ?>
